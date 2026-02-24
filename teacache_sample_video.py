@@ -1,9 +1,15 @@
 import argparse
+import os
 import torch
 import numpy as np
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 from typing import Any, Dict, Optional, Tuple,  Union
 from diffusers.models.modeling_outputs import Transformer2DModelOutput
-from diffusers.utils import USE_PEFT_BACKEND, is_torch_version, scale_lora_layers, unscale_lora_layers, export_to_video, load_image
+from diffusers.utils import USE_PEFT_BACKEND, is_torch_version, scale_lora_layers, unscale_lora_layers, export_to_video, load_image, logging as diffusers_logging
+
+logger = diffusers_logging.get_logger(__name__)
 from diffusers import CogVideoXPipeline, CogVideoXImageToVideoPipeline
 
 coefficients_dict = {
@@ -68,13 +74,31 @@ def teacache_forward(
         hidden_states = hidden_states[:, text_seq_length:]
 
         if self.enable_teacache:
+            no_cache_mode = self.rel_l1_thresh == 0
+            adaptive_switch = getattr(self, "adaptive_rel_l1_switch_step", None)
+            if adaptive_switch is not None:
+                if self.cnt < adaptive_switch:
+                    current_thresh = getattr(self, "adaptive_rel_l1_thresh_1", self.rel_l1_thresh)
+                else:
+                    current_thresh = getattr(self, "adaptive_rel_l1_thresh_2", self.rel_l1_thresh)
+            else:
+                current_thresh = self.rel_l1_thresh
+            delta_temni_list = getattr(self, "delta_TEMNI", None)
+            rescale_func = np.poly1d(self.coefficients)
+            if delta_temni_list is not None and isinstance(delta_temni_list, list):
+                if self.previous_modulated_input is not None:
+                    raw_delta = ((emb - self.previous_modulated_input).abs().mean() / self.previous_modulated_input.abs().mean()).cpu().item()
+                    delta_temni_list.append(float(rescale_func(raw_delta)))
+                else:
+                    delta_temni_list.append(0.0)
             if self.cnt == 0 or self.cnt == self.num_steps-1:
                 should_calc = True
                 self.accumulated_rel_l1_distance = 0
-            else: 
-                rescale_func = np.poly1d(self.coefficients)
+            elif no_cache_mode:
+                should_calc = True
+            else:
                 self.accumulated_rel_l1_distance += rescale_func(((emb-self.previous_modulated_input).abs().mean() / self.previous_modulated_input.abs().mean()).cpu().item())
-                if self.accumulated_rel_l1_distance < self.rel_l1_thresh:
+                if self.accumulated_rel_l1_distance < current_thresh:
                     should_calc = False
                 else:
                     should_calc = True
@@ -183,6 +207,71 @@ def teacache_forward(
         return Transformer2DModelOutput(sample=output)
 
 
+def run_generation(
+    prompt,
+    seed,
+    rel_l1_thresh,
+    save_file,
+    ckpts_path="THUDM/CogVideoX1.5-5B",
+    num_inference_steps=50,
+    negative_prompt=None,
+    height=768,
+    width=1360,
+    num_frames=81,
+    guidance_scale=6.0,
+    fps=16,
+    pipe=None,
+    skip_delta_plot=False,
+    adaptive_schedule=None,
+):
+    """Generate a single video. Returns pipe for reuse in batch. Used by batch_generate_cogvideo.py."""
+    mode = ckpts_path.split("/")[-1]
+    if pipe is None:
+        pipe = CogVideoXPipeline.from_pretrained(ckpts_path, torch_dtype=torch.bfloat16)
+        pipe.to("cuda")
+        pipe.vae.enable_slicing()
+        pipe.vae.enable_tiling()
+    cls = pipe.transformer.__class__
+    cls.enable_teacache = True
+    cls.rel_l1_thresh = rel_l1_thresh
+    cls.accumulated_rel_l1_distance = 0
+    cls.previous_modulated_input = None
+    cls.previous_residual = None
+    cls.previous_residual_encoder = None
+    cls.num_steps = num_inference_steps
+    cls.cnt = 0
+    cls.coefficients = coefficients_dict[mode]
+    cls.forward = teacache_forward
+    # reset any previous adaptive schedule
+    cls.adaptive_rel_l1_switch_step = None
+    cls.adaptive_rel_l1_thresh_1 = None
+    cls.adaptive_rel_l1_thresh_2 = None
+    if adaptive_schedule is not None:
+        cls.adaptive_rel_l1_switch_step = adaptive_schedule.get("switch_step")
+        cls.adaptive_rel_l1_thresh_1 = adaptive_schedule.get("thresh1", rel_l1_thresh)
+        cls.adaptive_rel_l1_thresh_2 = adaptive_schedule.get("thresh2", rel_l1_thresh)
+    if rel_l1_thresh == 0:
+        pipe.transformer.__class__.delta_TEMNI = []
+
+    video = pipe(
+        prompt=prompt,
+        negative_prompt=negative_prompt,
+        width=width,
+        height=height,
+        num_frames=num_frames,
+        use_dynamic_cfg=True,
+        guidance_scale=guidance_scale,
+        num_inference_steps=num_inference_steps,
+        generator=torch.Generator("cuda").manual_seed(seed),
+    ).frames[0]
+
+    os.makedirs(os.path.dirname(os.path.abspath(save_file)), exist_ok=True)
+    export_to_video(video, save_file, fps=fps)
+    if rel_l1_thresh == 0 and not skip_delta_plot:
+        _plot_delta_temni(pipe.transformer.__class__, save_file)
+    return pipe
+
+
 def main(args):
     seed = args.seed
     ckpts_path = args.ckpts_path
@@ -199,6 +288,7 @@ def main(args):
     fps = args.fps
     image_path = args.image_path
     mode = ckpts_path.split("/")[-1]
+    os.makedirs(output_path, exist_ok=True)
 
     if generate_type == "t2v":
         pipe = CogVideoXPipeline.from_pretrained(ckpts_path, torch_dtype=torch.bfloat16)
@@ -217,6 +307,8 @@ def main(args):
     pipe.transformer.__class__.cnt = 0
     pipe.transformer.__class__.coefficients = coefficients_dict[mode]
     pipe.transformer.__class__.forward = teacache_forward
+    if rel_l1_thresh == 0:
+        pipe.transformer.__class__.delta_TEMNI = []
 
     pipe.to("cuda")
     pipe.vae.enable_slicing()
@@ -247,8 +339,42 @@ def main(args):
             generator=torch.Generator("cuda").manual_seed(seed),  # Set the seed for reproducibility
         ).frames[0]
     words = prompt.split()[:5]
-    video_path = f"{output_path}/teacache_cogvideox1.5-5B_{words}_{rel_l1_thresh}.mp4"
+    video_path = f"{output_path}/teacache_{mode}_{'_'.join(words)}_{rel_l1_thresh}.mp4"
     export_to_video(video, video_path, fps=fps)
+    if rel_l1_thresh == 0:
+        _plot_delta_temni(pipe.transformer.__class__, video_path)
+
+
+def _plot_delta_temni(transformer_class, save_file):
+    """Plot and save delta TEMNI when recorded (no TeaCache). Same style as Wan/Mochi/HunyuanVideo."""
+    delta_temni = getattr(transformer_class, "delta_TEMNI", None)
+    if not delta_temni or len(delta_temni) == 0:
+        return
+    out_dir = os.path.dirname(os.path.abspath(save_file))
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
+    else:
+        out_dir = "."
+    base = os.path.splitext(os.path.basename(save_file))[0]
+    plt.figure(figsize=(10, 6))
+    x = range(1, len(delta_temni) + 1)
+    plt.plot(x, delta_temni, "g-", linewidth=2, marker="s", markersize=4)
+    plt.xlabel("Forward step (1 = first solver step, high t → right = last step, low t)")
+    plt.ylabel("Delta TEMNI (rescaled relative L1)")
+    plt.title("Delta TEMNI over diffusion steps (no TeaCache)")
+    plt.grid(True, alpha=0.3)
+    ax = plt.gca()
+    step = max(1, len(delta_temni) // 20)
+    ax.xaxis.set_major_locator(plt.MultipleLocator(step))
+    plot_path = os.path.join(out_dir, f"{base}_delta_TEMNI_plot.png")
+    plt.savefig(plot_path, dpi=150, bbox_inches="tight")
+    plt.close()
+    print(f"Delta TEMNI plot saved to: {plot_path}")
+    txt_path = os.path.join(out_dir, f"{base}_delta_TEMNI.txt")
+    with open(txt_path, "w") as f:
+        for v in delta_temni:
+            f.write(f"{v}\n")
+    print(f"Delta TEMNI values saved to: {txt_path}")
 
 
 if __name__ == "__main__":
