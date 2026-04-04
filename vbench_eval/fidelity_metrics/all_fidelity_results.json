@@ -1,0 +1,70 @@
+{
+  "cogvideo_fixed_0.1": {
+    "mode": "cogvideo_fixed_0.1",
+    "baseline": "cogvideo_baseline",
+    "num_videos": 33,
+    "psnr": {
+      "mean": 37.318688915780754,
+      "std": 2.89231115492733
+    },
+    "ssim": {
+      "mean": 0.9578087726637748,
+      "std": 0.01601624990360345
+    },
+    "lpips": {
+      "mean": 0.029489529943821854,
+      "std": 0.006998494379881537
+    }
+  },
+  "cogvideo_fixed_0.3": {
+    "mode": "cogvideo_fixed_0.3",
+    "baseline": "cogvideo_baseline",
+    "num_videos": 33,
+    "psnr": {
+      "mean": 16.35011628811669,
+      "std": 2.9387511229955594
+    },
+    "ssim": {
+      "mean": 0.5798013750881404,
+      "std": 0.13044846180854439
+    },
+    "lpips": {
+      "mean": 0.46287071461807777,
+      "std": 0.11358221759152583
+    }
+  },
+  "cogvideo_adaptive_0.1_17_0.3": {
+    "mode": "cogvideo_adaptive_0.1_17_0.3",
+    "baseline": "cogvideo_baseline",
+    "num_videos": 33,
+    "psnr": {
+      "mean": 31.738862971136246,
+      "std": 2.246817897094943
+    },
+    "ssim": {
+      "mean": 0.929495376590405,
+      "std": 0.0401131957955617
+    },
+    "lpips": {
+      "mean": 0.05898591481759626,
+      "std": 0.01679905757469142
+    }
+  },
+  "cogvideo_adaptive_0.1_20_0.3": {
+    "mode": "cogvideo_adaptive_0.1_20_0.3",
+    "baseline": "cogvideo_baseline",
+    "num_videos": 33,
+    "psnr": {
+      "mean": 32.024969255882034,
+      "std": 2.2704737721203068
+    },
+    "ssim": {
+      "mean": 0.9303641937363668,
+      "std": 0.04047546567487109
+    },
+    "lpips": {
+      "mean": 0.05774156233937586,
+      "std": 0.016511355779186547
+    }
+  }
+}

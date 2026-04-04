@@ -1,0 +1,463 @@
+{
+  "gpu": "2",
+  "start_idx": 17,
+  "end_idx": 25,
+  "model_id": "THUDM/CogVideoX1.5-5B",
+  "steps": 50,
+  "guidance_scale": 6.0,
+  "seed": 0,
+  "height": 768,
+  "width": 1360,
+  "num_frames": 81,
+  "fps": 16,
+  "runs": [
+    {
+      "prompt_idx": 17,
+      "mode": "cog_dc_baseline",
+      "time_seconds": 1011.57,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/017-seed0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 17,
+      "mode": "cog_dc_fixed_0.05",
+      "time_seconds": 820.05,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/017-seed0.mp4",
+      "rel_l1_thresh": 0.05,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 17,
+      "mode": "cog_dc_fixed_0.10",
+      "time_seconds": 647.65,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/017-seed0.mp4",
+      "rel_l1_thresh": 0.1,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 17,
+      "mode": "cog_dc_fixed_0.15",
+      "time_seconds": 571.01,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/017-seed0.mp4",
+      "rel_l1_thresh": 0.15,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 17,
+      "mode": "cog_dc_fixed_0.20",
+      "time_seconds": 494.75,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/017-seed0.mp4",
+      "rel_l1_thresh": 0.2,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 17,
+      "mode": "cog_dc_fixed_0.25",
+      "time_seconds": 456.44,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/017-seed0.mp4",
+      "rel_l1_thresh": 0.25,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 17,
+      "mode": "cog_dc_fixed_0.30",
+      "time_seconds": 418.2,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/017-seed0.mp4",
+      "rel_l1_thresh": 0.3,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 18,
+      "mode": "cog_dc_baseline",
+      "time_seconds": 1011.8,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/018-seed0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 18,
+      "mode": "cog_dc_fixed_0.05",
+      "time_seconds": 801.17,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/018-seed0.mp4",
+      "rel_l1_thresh": 0.05,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 18,
+      "mode": "cog_dc_fixed_0.10",
+      "time_seconds": 648.22,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/018-seed0.mp4",
+      "rel_l1_thresh": 0.1,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 18,
+      "mode": "cog_dc_fixed_0.15",
+      "time_seconds": 571.07,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/018-seed0.mp4",
+      "rel_l1_thresh": 0.15,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 18,
+      "mode": "cog_dc_fixed_0.20",
+      "time_seconds": 494.6,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/018-seed0.mp4",
+      "rel_l1_thresh": 0.2,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 18,
+      "mode": "cog_dc_fixed_0.25",
+      "time_seconds": 456.08,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/018-seed0.mp4",
+      "rel_l1_thresh": 0.25,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 18,
+      "mode": "cog_dc_fixed_0.30",
+      "time_seconds": 417.72,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/018-seed0.mp4",
+      "rel_l1_thresh": 0.3,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 19,
+      "mode": "cog_dc_baseline",
+      "time_seconds": 1011.42,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/019-seed0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 19,
+      "mode": "cog_dc_fixed_0.05",
+      "time_seconds": 800.74,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/019-seed0.mp4",
+      "rel_l1_thresh": 0.05,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 19,
+      "mode": "cog_dc_fixed_0.10",
+      "time_seconds": 647.8,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/019-seed0.mp4",
+      "rel_l1_thresh": 0.1,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 19,
+      "mode": "cog_dc_fixed_0.15",
+      "time_seconds": 570.87,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/019-seed0.mp4",
+      "rel_l1_thresh": 0.15,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 19,
+      "mode": "cog_dc_fixed_0.20",
+      "time_seconds": 513.63,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/019-seed0.mp4",
+      "rel_l1_thresh": 0.2,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 19,
+      "mode": "cog_dc_fixed_0.25",
+      "time_seconds": 456.67,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/019-seed0.mp4",
+      "rel_l1_thresh": 0.25,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 19,
+      "mode": "cog_dc_fixed_0.30",
+      "time_seconds": 418.19,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/019-seed0.mp4",
+      "rel_l1_thresh": 0.3,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 20,
+      "mode": "cog_dc_baseline",
+      "time_seconds": 1011.91,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/020-seed0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 20,
+      "mode": "cog_dc_fixed_0.05",
+      "time_seconds": 801.3,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/020-seed0.mp4",
+      "rel_l1_thresh": 0.05,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 20,
+      "mode": "cog_dc_fixed_0.10",
+      "time_seconds": 648.01,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/020-seed0.mp4",
+      "rel_l1_thresh": 0.1,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 20,
+      "mode": "cog_dc_fixed_0.15",
+      "time_seconds": 571.34,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/020-seed0.mp4",
+      "rel_l1_thresh": 0.15,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 20,
+      "mode": "cog_dc_fixed_0.20",
+      "time_seconds": 513.9,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/020-seed0.mp4",
+      "rel_l1_thresh": 0.2,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 20,
+      "mode": "cog_dc_fixed_0.25",
+      "time_seconds": 456.41,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/020-seed0.mp4",
+      "rel_l1_thresh": 0.25,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 20,
+      "mode": "cog_dc_fixed_0.30",
+      "time_seconds": 418.26,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/020-seed0.mp4",
+      "rel_l1_thresh": 0.3,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 21,
+      "mode": "cog_dc_baseline",
+      "time_seconds": 1012.64,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/021-seed0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 21,
+      "mode": "cog_dc_fixed_0.05",
+      "time_seconds": 802.2,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/021-seed0.mp4",
+      "rel_l1_thresh": 0.05,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 21,
+      "mode": "cog_dc_fixed_0.10",
+      "time_seconds": 648.78,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/021-seed0.mp4",
+      "rel_l1_thresh": 0.1,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 21,
+      "mode": "cog_dc_fixed_0.15",
+      "time_seconds": 572.2,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/021-seed0.mp4",
+      "rel_l1_thresh": 0.15,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 21,
+      "mode": "cog_dc_fixed_0.20",
+      "time_seconds": 514.43,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/021-seed0.mp4",
+      "rel_l1_thresh": 0.2,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 21,
+      "mode": "cog_dc_fixed_0.25",
+      "time_seconds": 456.89,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/021-seed0.mp4",
+      "rel_l1_thresh": 0.25,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 21,
+      "mode": "cog_dc_fixed_0.30",
+      "time_seconds": 418.6,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/021-seed0.mp4",
+      "rel_l1_thresh": 0.3,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 22,
+      "mode": "cog_dc_baseline",
+      "time_seconds": 1012.64,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/022-seed0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 22,
+      "mode": "cog_dc_fixed_0.05",
+      "time_seconds": 801.91,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/022-seed0.mp4",
+      "rel_l1_thresh": 0.05,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 22,
+      "mode": "cog_dc_fixed_0.10",
+      "time_seconds": 648.57,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/022-seed0.mp4",
+      "rel_l1_thresh": 0.1,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 22,
+      "mode": "cog_dc_fixed_0.15",
+      "time_seconds": 571.84,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/022-seed0.mp4",
+      "rel_l1_thresh": 0.15,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 22,
+      "mode": "cog_dc_fixed_0.20",
+      "time_seconds": 514.53,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/022-seed0.mp4",
+      "rel_l1_thresh": 0.2,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 22,
+      "mode": "cog_dc_fixed_0.25",
+      "time_seconds": 456.87,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/022-seed0.mp4",
+      "rel_l1_thresh": 0.25,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 22,
+      "mode": "cog_dc_fixed_0.30",
+      "time_seconds": 418.77,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/022-seed0.mp4",
+      "rel_l1_thresh": 0.3,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 23,
+      "mode": "cog_dc_baseline",
+      "time_seconds": 1012.56,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/023-seed0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 23,
+      "mode": "cog_dc_fixed_0.05",
+      "time_seconds": 802.14,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/023-seed0.mp4",
+      "rel_l1_thresh": 0.05,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 23,
+      "mode": "cog_dc_fixed_0.10",
+      "time_seconds": 648.89,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/023-seed0.mp4",
+      "rel_l1_thresh": 0.1,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 23,
+      "mode": "cog_dc_fixed_0.15",
+      "time_seconds": 571.97,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/023-seed0.mp4",
+      "rel_l1_thresh": 0.15,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 23,
+      "mode": "cog_dc_fixed_0.20",
+      "time_seconds": 514.63,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/023-seed0.mp4",
+      "rel_l1_thresh": 0.2,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 23,
+      "mode": "cog_dc_fixed_0.25",
+      "time_seconds": 457.1,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/023-seed0.mp4",
+      "rel_l1_thresh": 0.25,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 23,
+      "mode": "cog_dc_fixed_0.30",
+      "time_seconds": 418.97,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/023-seed0.mp4",
+      "rel_l1_thresh": 0.3,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 24,
+      "mode": "cog_dc_baseline",
+      "time_seconds": 1012.83,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/024-seed0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 24,
+      "mode": "cog_dc_fixed_0.05",
+      "time_seconds": 821.32,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/024-seed0.mp4",
+      "rel_l1_thresh": 0.05,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 24,
+      "mode": "cog_dc_fixed_0.10",
+      "time_seconds": 649.06,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/024-seed0.mp4",
+      "rel_l1_thresh": 0.1,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 24,
+      "mode": "cog_dc_fixed_0.15",
+      "time_seconds": 572.19,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/024-seed0.mp4",
+      "rel_l1_thresh": 0.15,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 24,
+      "mode": "cog_dc_fixed_0.20",
+      "time_seconds": 514.66,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/024-seed0.mp4",
+      "rel_l1_thresh": 0.2,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 24,
+      "mode": "cog_dc_fixed_0.25",
+      "time_seconds": 457.01,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/024-seed0.mp4",
+      "rel_l1_thresh": 0.25,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 24,
+      "mode": "cog_dc_fixed_0.30",
+      "time_seconds": 418.77,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/024-seed0.mp4",
+      "rel_l1_thresh": 0.3,
+      "probe_depth": 1
+    }
+  ]
+}

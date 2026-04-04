@@ -1,0 +1,6 @@
+Mode,PSNR,SSIM,LPIPS,Latency
+cogvideo_baseline,—,—,—,1019s
+cogvideo_fixed_0.1,37.3187,0.9578,0.0295,722s
+cogvideo_fixed_0.3,16.3501,0.5798,0.4629,466s
+cogvideo_adaptive_0.1_17_0.3,31.7389,0.9295,0.0590,526s
+cogvideo_adaptive_0.1_20_0.3,32.0250,0.9304,0.0577,546s

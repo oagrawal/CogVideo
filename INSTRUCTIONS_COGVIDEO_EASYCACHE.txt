@@ -1,0 +1,619 @@
+TODO:
+
+(all of this will be very similar to /nfs/oagrawal/wan/Wan2.1/EASYCACHE_INSTRUCTIONS_WAN.md - we are just trying to replicate with easycache + cogvideo)
+
+(also please use the hv_eval_wan container for all of these experiments - it should work because this container has visibility into the entire /nfs/oagrawal/ directory - it makes video generation and VBench eval and fidelity metric eval possible all in one container)
+
+- run the baseline model, get plots and logs of what the pred_change (the metric easycache accumulated and compared against the fixed threshold) looks like over the baseline run
+- from these plots and logs we can infer what good ret_steps values would be, and what values of low and high thresholds would be good, and figure out which steps should the low threshold apply and on which timesteps should the high threshold apply. 
+- run video generation for baseline (no caching), and for several fixed threshold policies (that would be in the range of the low and high thresholds I picked from the previous step). In this step we need to generate videos and also get the e2e generation times to judge speedups.
+- run VBench eval (similar what was written in EASYCACHE_INSTRUCTIONS_WAN) for these policies
+- look at at which fixed threshold does VBench quality metric degrade (that will be the high threshold), and then find a low threshold value that will reasonably keep video quality (can maybe pick multiple such low-high threshold pairs)
+- run adaptive policies based off of these low-high threshold pairs that were selected - run video generation for these, and then VBench eval for these
+
+
+================================================================================
+CogVideoX EasyCache — Run Instructions (mirror of Wan2.1 instructions)
+================================================================================
+
+Use ONE container for everything (generation + VBench + fidelity):
+
+1) Container + tmux setup (host)
+--------------------------------
+
+Create the container once (if not already created):
+
+```bash
+docker run -it --gpus all --init --net=host --uts=host --ipc=host \
+  --name hv_eval_wan --security-opt=seccomp=unconfined \
+  --ulimit=stack=67108864 --ulimit=memlock=-1 --privileged \
+  -v /nfs/oagrawal:/nfs/oagrawal \
+  hunyuanvideo/hunyuanvideo:cuda_11 bash
+```
+
+Re-enter later:
+
+```bash
+docker start -ai hv_eval_wan
+```
+
+If the container is already running in the background:
+
+```bash
+docker exec -it hv_eval_wan bash
+```
+
+Inside the container, install prerequisites (one-time):
+
+```bash
+apt-get update && apt-get install -y libgl1
+
+# VBench stack (matches Wan instructions)
+pip install transformers==4.33.2
+pip install vbench
+pip install 'git+https://github.com/facebookresearch/detectron2.git'
+pip install lpips
+
+# Ensure diffusers is installed (CogVideoXPipeline)
+pip install diffusers accelerate safetensors
+```
+
+tmux setup (recommended for long runs):
+
+```bash
+# create session
+tmux new -s cog_ec
+
+# reattach later
+tmux attach -t cog_ec
+
+# list sessions
+tmux ls
+```
+
+
+2) Paths (inside container)
+--------------------------
+
+```bash
+HV_ROOT=/nfs/oagrawal/HunyuanVideo
+COG_ROOT=/nfs/oagrawal/CogVideo
+
+# Where we will write videos + logs (make it once)
+COG_EC=$COG_ROOT/vbench_eval_easycache
+mkdir -p $COG_EC/videos $COG_EC/vbench_scores $COG_EC/fidelity_metrics $COG_EC/profiling
+```
+
+
+3) TODO 1 — Baseline profiling (pred_change shape, logs, plots)
+--------------------------------------------------------------
+
+Goal: run baseline (no skipping) and write:
+- pred_change per step (the metric EasyCache accumulates)
+- k_t per step
+- plots
+- timing
+
+Run this single-video baseline profiling (writes outputs into $COG_EC/profiling/...):
+
+```bash
+cd $COG_ROOT
+
+python3 easycache_profile_cogvideo.py
+```
+
+
+4) TODO 2 — Pick ret_steps + low/high thresholds + adaptive step ranges
+----------------------------------------------------------------------
+
+Open the generated `pred_change_plot.png` and `profiling.json` in the profiling run dir.
+
+Helpful quick stats:
+
+```bash
+python3 - << 'PY'
+import glob, json, numpy as np
+root="/nfs/oagrawal/CogVideo/vbench_eval_easycache/profiling"
+paths=sorted(glob.glob(root+"/baseline_profile_*/profiling.json"))
+assert paths, f"No profiling.json under {root}"
+p=paths[-1]
+d=json.load(open(p))
+pc=np.array(d.get("pred_change_history", []), dtype=float)
+print("profiling:", p)
+if pc.size:
+    for q in [50,75,90,95,97,99]:
+        print(f"pred_change p{q:02d}:", float(np.percentile(pc,q)))
+    print("min/mean/max:", float(pc.min()), float(pc.mean()), float(pc.max()))
+else:
+    print("No pred_change_history recorded yet (k may not have initialized).")
+PY
+```
+
+Heuristic (same spirit as Wan):
+- pick `ret_steps` so the earliest volatile region is forced to compute
+- choose `thresh_low` near the “danger zone” boundary (conservative)
+- choose `thresh_high` for the stable middle region (aggressive)
+- choose `first_steps` and `last_steps` to protect early/late volatile regions in adaptive mode
+
+
+5) TODO 3 — Generate videos: baseline + fixed thresholds (timing + outputs)
+--------------------------------------------------------------------------
+
+We will write into:
+`$COG_EC/videos/<mode_name>/{prompt_idx:03d}-seed{seed}.mp4`
+
+Run a small trial first (4 prompts, quick steps) to sanity check timing + mode isolation:
+
+```bash
+cd $COG_ROOT
+
+python3 - << 'PY'
+import json, os, time
+from pathlib import Path
+
+import torch
+from diffusers import CogVideoXPipeline
+from diffusers.utils import export_to_video
+
+from easycache_cogvideo import easycache_forward, easycache_baseline_forward
+
+HV_ROOT = Path("/nfs/oagrawal/HunyuanVideo")
+prompts = json.load(open(HV_ROOT/"vbench_eval"/"prompts_subset.json"))[:4]
+
+out_root = Path("/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos")
+out_root.mkdir(parents=True, exist_ok=True)
+
+model_id = os.environ.get("COG_MODEL", "THUDM/CogVideoX-2b")
+steps = int(os.environ.get("COG_STEPS", "20"))
+guidance = float(os.environ.get("COG_GUIDANCE", "6.0"))
+seed = int(os.environ.get("COG_SEED", "12345"))
+
+modes = [
+    ("cog_ec_baseline", {"mode":"baseline"}),
+    ("cog_ec_fixed_0.025", {"mode":"easycache", "thresh":0.025, "ret_steps":5}),
+    ("cog_ec_fixed_0.050", {"mode":"easycache", "thresh":0.050, "ret_steps":5}),
+]
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+pipe = CogVideoXPipeline.from_pretrained(
+    model_id,
+    torch_dtype=torch.float16 if device.type == "cuda" else torch.float32,
+).to(device)
+
+transformer = pipe.transformer
+cls = transformer.__class__
+if not hasattr(cls, "_original_forward"):
+    cls._original_forward = cls.forward
+
+log = {"model_id": model_id, "steps": steps, "guidance_scale": guidance, "seed": seed, "runs": []}
+
+for pi, p in enumerate(prompts):
+    prompt = p["prompt"] if isinstance(p, dict) and "prompt" in p else str(p)
+    for mode_name, cfg in modes:
+        # reset state for each (prompt, mode)
+        cls.cnt = 0
+        cls.num_steps = steps
+        cls.total_time = 0.0
+        cls.k = None
+        cls.previous_raw_input = None
+        cls.previous_output = None
+        cls.prev_prev_raw_input = None
+        cls.k_history = []
+        cls.pred_change_history = []
+        cls.cache = None
+        cls.accumulated_error = 0.0
+        cls.ret_steps = int(cfg.get("ret_steps", 5))
+        cls.thresh = float(cfg.get("thresh", 0.05))
+
+        if cfg["mode"] == "baseline":
+            cls.forward = easycache_baseline_forward
+        else:
+            cls.forward = easycache_forward
+
+        g = torch.Generator(device=device).manual_seed(seed)
+        t0 = time.time()
+        vid = pipe(
+            prompt=prompt,
+            num_inference_steps=steps,
+            guidance_scale=guidance,
+            generator=g,
+            output_type="pt",
+        ).frames[0]
+        e2e = time.time() - t0
+        dit = float(transformer.total_time)
+
+        out_dir = out_root/mode_name
+        out_dir.mkdir(parents=True, exist_ok=True)
+        out_path = out_dir/f"{pi:03d}-seed{seed}.mp4"
+        export_to_video(vid, str(out_path), fps=8)
+
+        log["runs"].append(
+            {
+                "prompt_idx": pi,
+                "mode": mode_name,
+                "time_seconds": e2e,
+                "dit_time_seconds": dit,
+                "ret_steps": int(cls.ret_steps),
+                "thresh": float(cls.thresh),
+                "prompt": prompt,
+                "video_path": str(out_path),
+            }
+        )
+        print("DONE", mode_name, "prompt", pi, "e2e", round(e2e,2), "dit", round(dit,2))
+
+log_path = out_root.parent/f"generation_log_trial_steps{steps}.json"
+json.dump(log, open(log_path, "w"), indent=2)
+print("Wrote log:", log_path)
+PY
+```
+
+Sanity check timing:
+
+```bash
+python3 - << 'PY'
+import json, statistics as stats
+path="/nfs/oagrawal/CogVideo/vbench_eval_easycache/generation_log_trial_steps20.json"
+d=json.load(open(path))
+by={}
+for r in d["runs"]:
+    by.setdefault(r["mode"], []).append(r["time_seconds"])
+baseline=stats.mean(by["cog_ec_baseline"])
+print("Mode                    N   e2e_mean(s)  speedup_vs_baseline")
+print("-"*62)
+for m, xs in sorted(by.items()):
+    mean=stats.mean(xs)
+    sp=baseline/mean if m!="cog_ec_baseline" else 1.0
+    print(f"{m:22s} {len(xs):3d}   {mean:10.1f}   {sp:7.2f}x")
+PY
+```
+
+Full run (33 prompts, 4 modes, split across GPUs) — create 4 tmux sessions:
+
+```bash
+# Terminal 1
+tmux new -s cog_ec0
+docker exec -it hv_eval_wan bash
+
+# Terminals 2–4
+tmux new -s cog_ec1
+docker exec -it hv_eval_wan bash
+```
+
+In each tmux, run one GPU with a disjoint prompt range (edit start/end as needed):
+
+```bash
+cd /nfs/oagrawal/CogVideo
+
+# GPU 0: prompts 0-8
+CUDA_VISIBLE_DEVICES=0 python3 easycache_batch_generate_cogvideo.py \
+  --start-idx 0 --end-idx 9
+
+# GPU 1: prompts 9-17
+CUDA_VISIBLE_DEVICES=1 python3 easycache_batch_generate_cogvideo.py \
+  --start-idx 9 --end-idx 18
+
+# GPU 2: prompts 18-26
+CUDA_VISIBLE_DEVICES=2 python3 easycache_batch_generate_cogvideo.py \
+  --start-idx 18 --end-idx 27
+
+# GPU 3: prompts 27-32
+CUDA_VISIBLE_DEVICES=3 python3 easycache_batch_generate_cogvideo.py \
+  --start-idx 27 --end-idx 33
+```
+
+`easycache_batch_generate_cogvideo.py` by default runs 4 modes:
+- `cog_ec_baseline`
+- `cog_ec_fixed_0.035`
+- `cog_ec_fixed_0.05`
+- `cog_ec_fixed_0.08`
+
+You can override `--steps`, `--guidance-scale`, `--model-id`, or `--modes` if needed.
+
+Policy details (ret_steps + thresholds)
+--------------------------------------
+
+EasyCache makes a **compute vs skip** decision at each diffusion step \(i\).
+
+- **`ret_steps`**: the first `ret_steps` steps **always compute** (no skipping).
+- **last step**: the final step \(i == num_steps-1\) **always computes**.
+- **fixed threshold**: uses a single `thresh` for all non-ret/non-final steps.
+- **adaptive threshold**: uses `thresh_low` near the “volatile” edges and `thresh_high` in the stable middle:
+
+  - **low-threshold region** (more conservative): \(i < first_steps\) OR \(i >= num_steps - last_steps\)
+  - **high-threshold region** (more aggressive): otherwise (middle steps)
+
+Concrete values used in our CogVideo runs:
+
+- **Fixed-threshold modes** (all use `ret_steps=1`):
+  - `cog_ec_fixed_0.035`: `thresh=0.035`, `ret_steps=1`
+  - `cog_ec_fixed_0.05`:  `thresh=0.05`,  `ret_steps=1`
+  - `cog_ec_fixed_0.08`:  `thresh=0.08`,  `ret_steps=1`
+  - `cog_ec_fixed_0.10`:  `thresh=0.10`,  `ret_steps=1`
+  - `cog_ec_fixed_0.12`:  `thresh=0.12`,  `ret_steps=1`
+  - `cog_ec_fixed_0.15`:  `thresh=0.15`,  `ret_steps=1`
+
+- **Adaptive modes** (threshold switches by `first_steps`/`last_steps` as described above):
+  - `cog_ec_adapt_lo035_hi080`:
+    - `ret_steps=3`
+    - `thresh_low=0.035`, `thresh_high=0.08`
+    - `first_steps=10`, `last_steps=5`
+  - `cog_ec_adapt_lo050_hi080`:
+    - `ret_steps=2`
+    - `thresh_low=0.05`, `thresh_high=0.08`
+    - `first_steps=8`, `last_steps=5`
+  - `cog_ec_adapt_lo050_hi100`:
+    - `ret_steps=1`
+    - `thresh_low=0.05`, `thresh_high=0.10`
+    - `first_steps=8`, `last_steps=5`
+
+Reattach later:
+
+```bash
+tmux attach -t cog_ec0   # etc.
+```
+
+Verify counts:
+
+```bash
+for mode in cog_ec_baseline cog_ec_fixed_0.025 cog_ec_fixed_0.050; do
+  count=$(ls /nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/$mode/ 2>/dev/null | wc -l)
+  echo "$mode: $count videos"
+done
+```
+
+
+6) TODO 4 — Run VBench evaluation for CogVideo modes
+----------------------------------------------------
+
+Reuse HunyuanVideo’s VBench runner; point it at CogVideo output dirs.
+
+```bash
+HV_ROOT=/nfs/oagrawal/HunyuanVideo
+COG_EC=/nfs/oagrawal/CogVideo/vbench_eval_easycache
+```
+
+Run one mode per GPU (recommended):
+
+```bash
+# GPU 0 — baseline
+CUDA_VISIBLE_DEVICES=0 python3 $HV_ROOT/vbench_eval_easycache/run_vbench_eval.py \
+  --video-dir $COG_EC/videos \
+  --save-dir $COG_EC/vbench_scores \
+  --full-info $HV_ROOT/vbench_eval/prompts_subset.json \
+  --modes cog_ec_baseline
+
+# GPU 1 — fixed 0.025
+CUDA_VISIBLE_DEVICES=1 python3 $HV_ROOT/vbench_eval_easycache/run_vbench_eval.py \
+  --video-dir $COG_EC/videos \
+  --save-dir $COG_EC/vbench_scores \
+  --full-info $HV_ROOT/vbench_eval/prompts_subset.json \
+  --modes cog_ec_fixed_0.025
+
+# GPU 2 — fixed 0.050
+CUDA_VISIBLE_DEVICES=2 python3 $HV_ROOT/vbench_eval_easycache/run_vbench_eval.py \
+  --video-dir $COG_EC/videos \
+  --save-dir $COG_EC/vbench_scores \
+  --full-info $HV_ROOT/vbench_eval/prompts_subset.json \
+  --modes cog_ec_fixed_0.050
+```
+
+Verify eval result counts:
+
+```bash
+python3 - << 'PY'
+import glob
+COG_EC="/nfs/oagrawal/CogVideo/vbench_eval_easycache"
+for mode in ["cog_ec_baseline","cog_ec_fixed_0.025","cog_ec_fixed_0.050"]:
+    n = len(glob.glob(f"{COG_EC}/vbench_scores/{mode}/*_eval_results.json"))
+    print(f"{mode}: {n}/11 eval_results.json")
+PY
+```
+
+
+7) TODO 5 — Identify quality degradation threshold + pick low threshold
+-----------------------------------------------------------------------
+
+After VBench completes, inspect scores under:
+`$COG_EC/vbench_scores/<mode>/...`
+
+Use this quick helper to print overall aggregate JSON paths:
+
+```bash
+ls -R /nfs/oagrawal/CogVideo/vbench_eval_easycache/vbench_scores
+```
+
+Heuristic:
+- the highest fixed threshold that keeps VBench metrics close to baseline → “high threshold”
+- then choose a conservative low threshold (or multiple pairs) for adaptive policies
+
+
+8) TODO 6 — Adaptive policy runs (low/high thresholds across step ranges)
+------------------------------------------------------------------------
+
+CogVideo’s current `easycache_cogvideo.py` implements fixed-threshold skipping.
+For adaptive, run generation with an adaptive wrapper in-process (no file edits).
+
+Example adaptive run (single video) — edit the step ranges + thresholds:
+
+```bash
+cd /nfs/oagrawal/CogVideo
+
+python3 - << 'PY'
+import os, time
+from dataclasses import dataclass
+
+import torch
+from diffusers import CogVideoXPipeline
+from diffusers.utils import export_to_video
+
+from easycache_cogvideo import _extract_sample_from_output, _wrap_sample_for_output
+
+@dataclass
+class AdaptiveCfg:
+    ret_steps: int = 5
+    thresh_low: float = 0.025
+    thresh_high: float = 0.050
+    first_steps: int = 12
+    last_steps: int = 6
+
+def adaptive_forward(self, hidden_states, encoder_hidden_states, timestep, image_rotary_emb=None, attention_kwargs=None, return_dict=True):
+    torch.cuda.synchronize()
+    start = time.time()
+    raw_input = hidden_states
+    steps = int(self.num_steps)
+    i = int(self.cnt)
+
+    # decide which threshold applies
+    current_thresh = self.thresh_high
+    if i < self.first_steps or i >= steps - self.last_steps:
+        current_thresh = self.thresh_low
+
+    if i < self.ret_steps or i >= steps - 1:
+        should_calc = True
+        self.accumulated_error = 0.0
+    else:
+        if self.previous_raw_input is not None and self.previous_output is not None and self.k is not None:
+            raw_input_change = (raw_input - self.previous_raw_input).abs().mean()
+            output_norm = self.previous_output.abs().mean()
+            pred_change = (self.k * (raw_input_change / output_norm)).item() if output_norm > 0 else float("inf")
+            self.accumulated_error += pred_change
+            should_calc = self.accumulated_error >= current_thresh
+            if should_calc:
+                self.accumulated_error = 0.0
+        else:
+            should_calc = True
+
+    self.previous_raw_input = raw_input.detach()
+
+    if (not should_calc) and (self.cache is not None):
+        result = raw_input + self.cache
+        self.cnt += 1
+        torch.cuda.synchronize()
+        self.total_time += (time.time() - start)
+        if return_dict:
+            return {"sample": result}
+        return (result,)
+
+    out = self._original_forward(
+        hidden_states=hidden_states,
+        encoder_hidden_states=encoder_hidden_states,
+        timestep=timestep,
+        image_rotary_emb=image_rotary_emb,
+        attention_kwargs=attention_kwargs,
+        return_dict=return_dict,
+    )
+    result = _extract_sample_from_output(out, return_dict)
+
+    if self.previous_output is not None and self.prev_prev_raw_input is not None:
+        output_change = (result - self.previous_output).abs().mean()
+        input_change = (self.previous_raw_input - self.prev_prev_raw_input).abs().mean()
+        if input_change > 0:
+            self.k = output_change / input_change
+
+    self.cache = result - raw_input
+    self.prev_prev_raw_input = self.previous_raw_input
+    self.previous_output = result.detach()
+
+    self.cnt += 1
+    torch.cuda.synchronize()
+    self.total_time += (time.time() - start)
+    return _wrap_sample_for_output(result, out, return_dict)
+
+cfg = AdaptiveCfg()
+prompt = "A panda, dressed in a small red jacket and tiny hat, plays a guitar in a bamboo forest."
+model_id = os.environ.get("COG_MODEL", "THUDM/CogVideoX-2b")
+steps = int(os.environ.get("COG_STEPS", "50"))
+guidance = float(os.environ.get("COG_GUIDANCE", "6.0"))
+seed = int(os.environ.get("COG_SEED", "12345"))
+out = os.environ.get("COG_OUT", "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adaptive_single.mp4")
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+g = torch.Generator(device=device).manual_seed(seed)
+
+pipe = CogVideoXPipeline.from_pretrained(
+    model_id,
+    torch_dtype=torch.float16 if device.type == "cuda" else torch.float32,
+).to(device)
+
+tr = pipe.transformer
+cls = tr.__class__
+if not hasattr(cls, "_original_forward"):
+    cls._original_forward = cls.forward
+
+# attach adaptive forward + state
+cls.forward = adaptive_forward
+cls.cnt = 0
+cls.num_steps = steps
+cls.total_time = 0.0
+cls.k = None
+cls.previous_raw_input = None
+cls.previous_output = None
+cls.prev_prev_raw_input = None
+cls.cache = None
+cls.accumulated_error = 0.0
+cls.ret_steps = cfg.ret_steps
+cls.thresh_low = cfg.thresh_low
+cls.thresh_high = cfg.thresh_high
+cls.first_steps = cfg.first_steps
+cls.last_steps = cfg.last_steps
+
+t0 = time.time()
+vid = pipe(prompt=prompt, num_inference_steps=steps, guidance_scale=guidance, generator=g, output_type="pt").frames[0]
+e2e = time.time() - t0
+export_to_video(vid, out, fps=8)
+print("saved:", out, "e2e_seconds:", round(e2e,2), "transformer_seconds:", round(float(tr.total_time),2))
+PY
+```
+
+After validating adaptive on a single video, add `cog_ec_adaptive_*` as another mode
+in the batch generation loops above and re-run VBench for those modes.
+
+
+9) Fidelity metrics (PSNR/SSIM/LPIPS) — optional but recommended (same as Wan)
+-----------------------------------------------------------------------------
+
+```bash
+HV_ROOT=/nfs/oagrawal/HunyuanVideo
+COG_EC=/nfs/oagrawal/CogVideo/vbench_eval_easycache
+
+CUDA_VISIBLE_DEVICES=0 python3 $HV_ROOT/vbench_eval_easycache/run_fidelity_metrics.py \
+  --video-dir $COG_EC/videos \
+  --baseline cog_ec_baseline \
+  --modes cog_ec_fixed_0.025,cog_ec_fixed_0.050 \
+  --save-dir $COG_EC/fidelity_metrics
+```
+
+================================================================================
+Notes / troubleshooting from CogVideo EasyCache runs
+================================================================================
+
+- **Transformers version for VBench**
+  - If you ever install or upgrade `diffusers`, `accelerate`, etc. and `transformers`
+    gets bumped (e.g., to 5.x), VBench's `scene` (and possibly other) dimensions can
+    break with errors like:
+    - `BertTokenizer has no attribute additional_special_tokens_ids`
+  - **Fix**: inside the `hv_eval_wan` container, re-pin transformers:
+    - `pip install transformers==4.33.2`
+
+- **PyTorch 2.6 `torch.load` change and motion_smoothness**
+  - Newer PyTorch defaults `torch.load(..., weights_only=True)`, which can cause
+    `motion_smoothness` to fail when loading the AMT checkpoint, with errors about
+    `Weights only load failed` / `typing.OrderedDict` not being allowlisted.
+  - **Fix**: this is already handled inside
+    `HunyuanVideo/vbench_eval_easycache/run_vbench_eval.py` via a small
+    `_patch_torch_load()` helper, so you do **not** need to do anything extra here.
+    Just make sure you are using the updated script from `HunyuanVideo`.
+
+- **Verifying all 16 VBench dimensions per mode**
+  - After VBench finishes, you can quickly sanity check that each mode has all
+    16 dimensions evaluated:
+    ```bash
+    COG_EC=/nfs/oagrawal/CogVideo/vbench_eval_easycache
+    for mode in cog_ec_baseline cog_ec_fixed_0.035 cog_ec_fixed_0.05 \
+                cog_ec_fixed_0.08 cog_ec_fixed_0.10 cog_ec_fixed_0.12 cog_ec_fixed_0.15; do
+      dir="$COG_EC/vbench_scores/$mode"
+      count=$(ls "$dir"/*_eval_results.json 2>/dev/null | wc -l)
+      echo "$mode: $count/16 eval_results.json"
+    done
+    ```
+

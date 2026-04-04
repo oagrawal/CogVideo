@@ -1,0 +1,308 @@
+{
+  "gpu": "2",
+  "start_idx": 0,
+  "end_idx": 33,
+  "model_id": "THUDM/CogVideoX-2b",
+  "steps": 50,
+  "guidance_scale": 6.0,
+  "seed": 12345,
+  "runs": [
+    {
+      "prompt_idx": 0,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 33.62441039085388,
+      "dit_time_seconds": 28.622251272201538,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/000-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 1,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 36.85297656059265,
+      "dit_time_seconds": 32.15193700790405,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/001-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 2,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 38.717050552368164,
+      "dit_time_seconds": 33.97637724876404,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/002-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 3,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 40.530672550201416,
+      "dit_time_seconds": 35.794397830963135,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/003-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 4,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 35.47967171669006,
+      "dit_time_seconds": 30.73781180381775,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/004-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 5,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 35.53447198867798,
+      "dit_time_seconds": 30.76110339164734,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/005-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 6,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 35.56488752365112,
+      "dit_time_seconds": 30.82180142402649,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/006-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 7,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 39.04277539253235,
+      "dit_time_seconds": 34.277222871780396,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/007-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 8,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 33.90869927406311,
+      "dit_time_seconds": 29.153014421463013,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/008-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 9,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 39.079121589660645,
+      "dit_time_seconds": 34.311153173446655,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/009-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 10,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 37.30810594558716,
+      "dit_time_seconds": 32.57556915283203,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/010-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 11,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 37.24186611175537,
+      "dit_time_seconds": 32.51596212387085,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/011-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 12,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 35.54064679145813,
+      "dit_time_seconds": 30.80521297454834,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/012-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 13,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 38.99530601501465,
+      "dit_time_seconds": 34.23302435874939,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/013-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 14,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 38.96517515182495,
+      "dit_time_seconds": 34.21764612197876,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/014-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 15,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 37.28348708152771,
+      "dit_time_seconds": 32.53782081604004,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/015-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 16,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 37.28768587112427,
+      "dit_time_seconds": 32.54370737075806,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/016-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 17,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 35.599111557006836,
+      "dit_time_seconds": 30.845784425735474,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/017-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 18,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 37.33525848388672,
+      "dit_time_seconds": 32.58002948760986,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/018-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 19,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 37.3390896320343,
+      "dit_time_seconds": 32.59577488899231,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/019-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 20,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 40.72521448135376,
+      "dit_time_seconds": 35.97692561149597,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/020-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 21,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 42.40473198890686,
+      "dit_time_seconds": 37.677425146102905,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/021-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 22,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 44.11686444282532,
+      "dit_time_seconds": 39.364640951156616,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/022-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 23,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 42.45416760444641,
+      "dit_time_seconds": 37.69142127037048,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/023-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 24,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 42.453510999679565,
+      "dit_time_seconds": 37.69968128204346,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/024-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 25,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 39.047306537628174,
+      "dit_time_seconds": 34.286202907562256,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/025-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 26,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 42.5018413066864,
+      "dit_time_seconds": 37.74781584739685,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/026-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 27,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 39.12021231651306,
+      "dit_time_seconds": 34.34415054321289,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/027-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 28,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 37.361199378967285,
+      "dit_time_seconds": 32.616286516189575,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/028-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 29,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 40.70381951332092,
+      "dit_time_seconds": 35.959688901901245,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/029-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 30,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 35.540809869766235,
+      "dit_time_seconds": 30.79944157600403,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/030-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 31,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 42.373324155807495,
+      "dit_time_seconds": 37.649277210235596,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/031-seed12345.mp4"
+    },
+    {
+      "prompt_idx": 32,
+      "mode": "cog_ec_adapt_f8l8_lo050_hi012",
+      "time_seconds": 37.261698722839355,
+      "dit_time_seconds": 32.51443433761597,
+      "ret_steps": 1,
+      "thresh": 0.0,
+      "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_f8l8_lo050_hi012/032-seed12345.mp4"
+    }
+  ]
+}

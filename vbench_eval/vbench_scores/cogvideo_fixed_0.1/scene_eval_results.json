@@ -1,0 +1,25 @@
+{
+    "scene": [
+        0.3125,
+        [
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/vbench_eval/videos/cogvideo_fixed_0.1/alley-0.mp4",
+                "video_results": 0.0,
+                "success_frame_count": 0,
+                "frame_count": 16
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/vbench_eval/videos/cogvideo_fixed_0.1/amusement park-0.mp4",
+                "video_results": 0.9375,
+                "success_frame_count": 15,
+                "frame_count": 16
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/vbench_eval/videos/cogvideo_fixed_0.1/aquarium-0.mp4",
+                "video_results": 0.0,
+                "success_frame_count": 0,
+                "frame_count": 16
+            }
+        ]
+    ]
+}

@@ -1,0 +1,19 @@
+{
+    "motion_smoothness": [
+        0.9751913912255574,
+        [
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_lo050_hi080/a person swimming in ocean-0.mp4",
+                "video_results": 0.9820096152755083
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_lo050_hi080/a person giving a presentation to a room full of colleagues-0.mp4",
+                "video_results": 0.9783278607063968
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_adapt_lo050_hi080/a person washing the dishes-0.mp4",
+                "video_results": 0.9652366976947672
+            }
+        ]
+    ]
+}

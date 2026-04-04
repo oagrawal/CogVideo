@@ -1,0 +1,53 @@
+[
+    {
+        "prompt_en": "alley",
+        "dimension": [
+            "scene",
+            "background_consistency"
+        ],
+        "auxiliary_info": {
+            "scene": {
+                "scene": {
+                    "scene": "alley"
+                }
+            }
+        },
+        "video_list": [
+            "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_fixed_0.12/alley-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "amusement park",
+        "dimension": [
+            "scene",
+            "background_consistency"
+        ],
+        "auxiliary_info": {
+            "scene": {
+                "scene": {
+                    "scene": "amusement park"
+                }
+            }
+        },
+        "video_list": [
+            "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_fixed_0.12/amusement park-0.mp4"
+        ]
+    },
+    {
+        "prompt_en": "aquarium",
+        "dimension": [
+            "scene",
+            "background_consistency"
+        ],
+        "auxiliary_info": {
+            "scene": {
+                "scene": {
+                    "scene": "aquarium"
+                }
+            }
+        },
+        "video_list": [
+            "/nfs/oagrawal/CogVideo/vbench_eval_easycache/videos/cog_ec_fixed_0.12/aquarium-0.mp4"
+        ]
+    }
+]

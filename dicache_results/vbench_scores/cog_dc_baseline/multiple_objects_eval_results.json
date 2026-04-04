@@ -1,0 +1,25 @@
+{
+    "multiple_objects": [
+        0.375,
+        [
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/dicache_results/videos/cog_dc_baseline/a bird and a cat-0.mp4",
+                "video_results": 0.1875,
+                "success_frame_count": 3,
+                "frame_count": 16
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/dicache_results/videos/cog_dc_baseline/a cat and a dog-0.mp4",
+                "video_results": 0.25,
+                "success_frame_count": 4,
+                "frame_count": 16
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/dicache_results/videos/cog_dc_baseline/a dog and a horse-0.mp4",
+                "video_results": 0.6875,
+                "success_frame_count": 11,
+                "frame_count": 16
+            }
+        ]
+    ]
+}

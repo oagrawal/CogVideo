@@ -1,0 +1,19 @@
+{
+    "temporal_flickering": [
+        0.9883716390023825,
+        [
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/dicache_results/videos/cog_dc_fixed_0.05/In a still frame, a stop sign-0.mp4",
+                "video_results": 0.9853054420620787
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/dicache_results/videos/cog_dc_fixed_0.05/a toilet, frozen in time-0.mp4",
+                "video_results": 0.9894671739316454
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/dicache_results/videos/cog_dc_fixed_0.05/a laptop, frozen in time-0.mp4",
+                "video_results": 0.9903423010134229
+            }
+        ]
+    ]
+}

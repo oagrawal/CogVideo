@@ -1,0 +1,6 @@
+Mode,Speedup,Latency (s),VBench Total,PSNR,SSIM,LPIPS
+cogvideo_baseline,1.00x,1019s,82.19%,—,—,—
+cogvideo_fixed_0.1,1.41x,722s,81.83%,37.3187,0.9578,0.0295
+cogvideo_fixed_0.3,2.19x,466s,78.04%,16.3501,0.5798,0.4629
+cogvideo_adaptive_0.1_17_0.3,1.94x,526s,79.96%,31.7389,0.9295,0.0590
+cogvideo_adaptive_0.1_20_0.3,1.87x,546s,81.78%,32.0250,0.9304,0.0577

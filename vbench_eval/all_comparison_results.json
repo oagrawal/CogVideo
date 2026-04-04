@@ -1,0 +1,210 @@
+{
+  "cogvideo_baseline": {
+    "vbench_raw": {
+      "subject_consistency": 0.9521454885601998,
+      "scene": 0.3333333333333333,
+      "human_action": 0.6666666666666666,
+      "spatial_relationship": 0.7935371984303045,
+      "appearance_style": 0.24013245884773668,
+      "background_consistency": 0.9666046142578125,
+      "color": 0.6666666666666666,
+      "imaging_quality": 0.7234518432617187,
+      "dynamic_degree": 0.6666666666666666,
+      "temporal_flickering": 0.9952571843184677,
+      "aesthetic_quality": 0.6405726869901022,
+      "temporal_style": 0.2445002645254135,
+      "multiple_objects": 0.4375,
+      "overall_consistency": 0.2714410225550334,
+      "object_class": 1.0,
+      "motion_smoothness": 0.9887833754491294
+    },
+    "vbench_quality_score": 0.854367934483695,
+    "vbench_semantic_score": 0.6919777696838085,
+    "vbench_total_score": 0.8218899015237178,
+    "timing": {
+      "avg_time": 1019.1878787878787,
+      "total_time": 33633.2,
+      "num_videos": 33
+    }
+  },
+  "cogvideo_fixed_0.1": {
+    "vbench_raw": {
+      "subject_consistency": 0.9516909213115772,
+      "scene": 0.3125,
+      "human_action": 0.6666666666666666,
+      "spatial_relationship": 0.8133584624580726,
+      "appearance_style": 0.24009645061728382,
+      "background_consistency": 0.9630859375,
+      "color": 0.6666666666666666,
+      "imaging_quality": 0.7221508168977965,
+      "dynamic_degree": 0.6666666666666666,
+      "temporal_flickering": 0.9951979837386437,
+      "aesthetic_quality": 0.6427195072174072,
+      "temporal_style": 0.24501793583234152,
+      "multiple_objects": 0.3125,
+      "overall_consistency": 0.27036266525586444,
+      "object_class": 1.0,
+      "motion_smoothness": 0.9884991535749137
+    },
+    "vbench_quality_score": 0.8535085546094882,
+    "vbench_semantic_score": 0.6772906444603785,
+    "vbench_total_score": 0.8182649725796661,
+    "fidelity": {
+      "mode": "cogvideo_fixed_0.1",
+      "baseline": "cogvideo_baseline",
+      "num_videos": 33,
+      "psnr": {
+        "mean": 37.318688915780754,
+        "std": 2.89231115492733
+      },
+      "ssim": {
+        "mean": 0.9578087726637748,
+        "std": 0.01601624990360345
+      },
+      "lpips": {
+        "mean": 0.029489529943821854,
+        "std": 0.006998494379881537
+      }
+    },
+    "timing": {
+      "avg_time": 721.9303030303029,
+      "total_time": 23823.699999999993,
+      "num_videos": 33
+    }
+  },
+  "cogvideo_fixed_0.3": {
+    "vbench_raw": {
+      "subject_consistency": 0.9429075576364994,
+      "scene": 0.14583333333333334,
+      "human_action": 0.3333333333333333,
+      "spatial_relationship": 0.7834363511374495,
+      "appearance_style": 0.23734632201646103,
+      "background_consistency": 0.9383260091145833,
+      "color": 0.9583333333333334,
+      "imaging_quality": 0.7148230586424777,
+      "dynamic_degree": 0.3333333333333333,
+      "temporal_flickering": 0.9873825450348699,
+      "aesthetic_quality": 0.6349567969640096,
+      "temporal_style": 0.23523120085398355,
+      "multiple_objects": 0.375,
+      "overall_consistency": 0.27217021584510803,
+      "object_class": 1.0,
+      "motion_smoothness": 0.9836149198571297
+    },
+    "vbench_quality_score": 0.8129838966857886,
+    "vbench_semantic_score": 0.6502483186983894,
+    "vbench_total_score": 0.7804367810883088,
+    "fidelity": {
+      "mode": "cogvideo_fixed_0.3",
+      "baseline": "cogvideo_baseline",
+      "num_videos": 33,
+      "psnr": {
+        "mean": 16.35011628811669,
+        "std": 2.9387511229955594
+      },
+      "ssim": {
+        "mean": 0.5798013750881404,
+        "std": 0.13044846180854439
+      },
+      "lpips": {
+        "mean": 0.46287071461807777,
+        "std": 0.11358221759152583
+      }
+    },
+    "timing": {
+      "avg_time": 466.26060606060605,
+      "total_time": 15386.6,
+      "num_videos": 33
+    }
+  },
+  "cogvideo_adaptive_0.1_17_0.3": {
+    "vbench_raw": {
+      "subject_consistency": 0.9490450038264195,
+      "scene": 0.3333333333333333,
+      "human_action": 0.6666666666666666,
+      "spatial_relationship": 0.7766050217335225,
+      "appearance_style": 0.24086291152263375,
+      "background_consistency": 0.9602406819661459,
+      "color": 0.6875,
+      "imaging_quality": 0.7190644385883347,
+      "dynamic_degree": 0.3333333333333333,
+      "temporal_flickering": 0.9947860081211415,
+      "aesthetic_quality": 0.6467809875806173,
+      "temporal_style": 0.24631046255429587,
+      "multiple_objects": 0.4375,
+      "overall_consistency": 0.2681066443522771,
+      "object_class": 1.0,
+      "motion_smoothness": 0.987827333787886
+    },
+    "vbench_quality_score": 0.8264225010538178,
+    "vbench_semantic_score": 0.692231152188877,
+    "vbench_total_score": 0.7995842312808297,
+    "fidelity": {
+      "mode": "cogvideo_adaptive_0.1_17_0.3",
+      "baseline": "cogvideo_baseline",
+      "num_videos": 33,
+      "psnr": {
+        "mean": 31.738862971136246,
+        "std": 2.246817897094943
+      },
+      "ssim": {
+        "mean": 0.929495376590405,
+        "std": 0.0401131957955617
+      },
+      "lpips": {
+        "mean": 0.05898591481759626,
+        "std": 0.01679905757469142
+      }
+    },
+    "timing": {
+      "avg_time": 525.7515151515152,
+      "total_time": 17349.8,
+      "num_videos": 33
+    }
+  },
+  "cogvideo_adaptive_0.1_20_0.3": {
+    "vbench_raw": {
+      "subject_consistency": 0.9499011180053155,
+      "scene": 0.25,
+      "human_action": 0.6666666666666666,
+      "spatial_relationship": 0.8092455797834676,
+      "appearance_style": 0.24055491255144038,
+      "background_consistency": 0.9595377604166667,
+      "color": 0.6875,
+      "imaging_quality": 0.7190251371595595,
+      "dynamic_degree": 0.6666666666666666,
+      "temporal_flickering": 0.994785826813941,
+      "aesthetic_quality": 0.644404411315918,
+      "temporal_style": 0.24567240476608276,
+      "multiple_objects": 0.4375,
+      "overall_consistency": 0.268946369489034,
+      "object_class": 0.9791666666666666,
+      "motion_smoothness": 0.9877611083306467
+    },
+    "vbench_quality_score": 0.8516646546592264,
+    "vbench_semantic_score": 0.6822228130996744,
+    "vbench_total_score": 0.8177762863473159,
+    "fidelity": {
+      "mode": "cogvideo_adaptive_0.1_20_0.3",
+      "baseline": "cogvideo_baseline",
+      "num_videos": 33,
+      "psnr": {
+        "mean": 32.024969255882034,
+        "std": 2.2704737721203068
+      },
+      "ssim": {
+        "mean": 0.9303641937363668,
+        "std": 0.04047546567487109
+      },
+      "lpips": {
+        "mean": 0.05774156233937586,
+        "std": 0.016511355779186547
+      }
+    },
+    "timing": {
+      "avg_time": 545.9575757575756,
+      "total_time": 18016.599999999995,
+      "num_videos": 33
+    }
+  }
+}

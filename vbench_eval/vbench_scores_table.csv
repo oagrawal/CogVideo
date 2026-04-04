@@ -1,0 +1,6 @@
+Mode,subject_consistency,background_consistency,temporal_flickering,motion_smoothness,dynamic_degree,aesthetic_quality,imaging_quality,object_class,multiple_objects,human_action,color,spatial_relationship,scene,appearance_style,temporal_style,overall_consistency,Quality Score,Semantic Score,Total Score,Latency
+cogvideo_baseline,0.9521,0.9666,0.9953,0.9888,0.6667,0.6406,0.7235,1.0000,0.4375,0.6667,0.6667,0.7935,0.3333,0.2401,0.2445,0.2714,85.44%,69.20%,82.19%,1019s
+cogvideo_fixed_0.1,0.9517,0.9631,0.9952,0.9885,0.6667,0.6427,0.7222,1.0000,0.3125,0.6667,0.6667,0.8134,0.3125,0.2401,0.2450,0.2704,85.35%,67.73%,81.83%,722s
+cogvideo_fixed_0.3,0.9429,0.9383,0.9874,0.9836,0.3333,0.6350,0.7148,1.0000,0.3750,0.3333,0.9583,0.7834,0.1458,0.2373,0.2352,0.2722,81.30%,65.02%,78.04%,466s
+cogvideo_adaptive_0.1_17_0.3,0.9490,0.9602,0.9948,0.9878,0.3333,0.6468,0.7191,1.0000,0.4375,0.6667,0.6875,0.7766,0.3333,0.2409,0.2463,0.2681,82.64%,69.22%,79.96%,526s
+cogvideo_adaptive_0.1_20_0.3,0.9499,0.9595,0.9948,0.9878,0.6667,0.6444,0.7190,0.9792,0.4375,0.6667,0.6875,0.8092,0.2500,0.2406,0.2457,0.2689,85.17%,68.22%,81.78%,546s
