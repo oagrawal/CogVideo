@@ -1,0 +1,308 @@
+{
+  "gpu": "1",
+  "start_idx": 0,
+  "end_idx": 33,
+  "model_id": "THUDM/CogVideoX1.5-5B",
+  "steps": 50,
+  "guidance_scale": 6.0,
+  "seed": 0,
+  "runs": [
+    {
+      "prompt_idx": 0,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 357.0359425544739,
+      "dit_time_seconds": 326.12555170059204,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a person swimming in ocean-0.mp4"
+    },
+    {
+      "prompt_idx": 1,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.9735839366913,
+      "dit_time_seconds": 345.41212368011475,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a person giving a presentation to a room full of colleagues-0.mp4"
+    },
+    {
+      "prompt_idx": 2,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.93354749679565,
+      "dit_time_seconds": 345.40837359428406,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a person washing the dishes-0.mp4"
+    },
+    {
+      "prompt_idx": 3,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.9837191104889,
+      "dit_time_seconds": 345.3487141132355,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/Close up of grapes on a rotating table.-0.mp4"
+    },
+    {
+      "prompt_idx": 4,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 356.4216797351837,
+      "dit_time_seconds": 325.80053424835205,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/Turtle swimming in ocean.-0.mp4"
+    },
+    {
+      "prompt_idx": 5,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.6115720272064,
+      "dit_time_seconds": 345.0419251918793,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/A storm trooper vacuuming the beach.-0.mp4"
+    },
+    {
+      "prompt_idx": 6,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 356.8248977661133,
+      "dit_time_seconds": 326.1831030845642,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/alley-0.mp4"
+    },
+    {
+      "prompt_idx": 7,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.89069414138794,
+      "dit_time_seconds": 345.28890562057495,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/amusement park-0.mp4"
+    },
+    {
+      "prompt_idx": 8,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 356.4393472671509,
+      "dit_time_seconds": 325.91574025154114,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/aquarium-0.mp4"
+    },
+    {
+      "prompt_idx": 9,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.9169554710388,
+      "dit_time_seconds": 345.3198685646057,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/In a still frame, a stop sign-0.mp4"
+    },
+    {
+      "prompt_idx": 10,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.82596158981323,
+      "dit_time_seconds": 345.2585473060608,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a toilet, frozen in time-0.mp4"
+    },
+    {
+      "prompt_idx": 11,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.6759207248688,
+      "dit_time_seconds": 345.1612169742584,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a laptop, frozen in time-0.mp4"
+    },
+    {
+      "prompt_idx": 12,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 356.6788647174835,
+      "dit_time_seconds": 326.1029603481293,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/A person is riding a bike-0.mp4"
+    },
+    {
+      "prompt_idx": 13,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.90737104415894,
+      "dit_time_seconds": 345.31583309173584,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/A person is marching-0.mp4"
+    },
+    {
+      "prompt_idx": 14,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.92319798469543,
+      "dit_time_seconds": 345.3375713825226,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/A person is roller skating-0.mp4"
+    },
+    {
+      "prompt_idx": 15,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.69187688827515,
+      "dit_time_seconds": 345.07488918304443,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/A beautiful coastal beach in spring, waves lapping on sand, in super slow motion-0.mp4"
+    },
+    {
+      "prompt_idx": 16,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 356.3535749912262,
+      "dit_time_seconds": 325.73059725761414,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/A beautiful coastal beach in spring, waves lapping on sand, zoom in-0.mp4"
+    },
+    {
+      "prompt_idx": 17,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 356.33124709129333,
+      "dit_time_seconds": 325.6698215007782,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/A beautiful coastal beach in spring, waves lapping on sand, zoom out-0.mp4"
+    },
+    {
+      "prompt_idx": 18,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.5000903606415,
+      "dit_time_seconds": 344.8774461746216,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/A beautiful coastal beach in spring, waves lapping on sand, Van Gogh style-0.mp4"
+    },
+    {
+      "prompt_idx": 19,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.6921863555908,
+      "dit_time_seconds": 345.0141513347626,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/A beautiful coastal beach in spring, waves lapping on sand, oil painting-0.mp4"
+    },
+    {
+      "prompt_idx": 20,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 356.5450370311737,
+      "dit_time_seconds": 325.9352271556854,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/A beautiful coastal beach in spring, waves lapping on sand by Hokusai, in the style of Ukiyo-0.mp4"
+    },
+    {
+      "prompt_idx": 21,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.95914459228516,
+      "dit_time_seconds": 345.40993309020996,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a red bicycle-0.mp4"
+    },
+    {
+      "prompt_idx": 22,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.8491532802582,
+      "dit_time_seconds": 345.2675783634186,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a green bicycle-0.mp4"
+    },
+    {
+      "prompt_idx": 23,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 376.0101854801178,
+      "dit_time_seconds": 345.3812508583069,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a blue bicycle-0.mp4"
+    },
+    {
+      "prompt_idx": 24,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.83369755744934,
+      "dit_time_seconds": 345.28127121925354,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a bicycle on the left of a car, front view-0.mp4"
+    },
+    {
+      "prompt_idx": 25,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.9084587097168,
+      "dit_time_seconds": 345.22974848747253,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a car on the right of a motorcycle, front view-0.mp4"
+    },
+    {
+      "prompt_idx": 26,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.9156844615936,
+      "dit_time_seconds": 345.34507989883423,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a motorcycle on the left of a bus, front view-0.mp4"
+    },
+    {
+      "prompt_idx": 27,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.8236219882965,
+      "dit_time_seconds": 345.2024757862091,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a bird and a cat-0.mp4"
+    },
+    {
+      "prompt_idx": 28,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.76791429519653,
+      "dit_time_seconds": 345.1509475708008,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a cat and a dog-0.mp4"
+    },
+    {
+      "prompt_idx": 29,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.77637577056885,
+      "dit_time_seconds": 345.15157985687256,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a dog and a horse-0.mp4"
+    },
+    {
+      "prompt_idx": 30,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.91135334968567,
+      "dit_time_seconds": 345.31848669052124,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a person-0.mp4"
+    },
+    {
+      "prompt_idx": 31,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.88259744644165,
+      "dit_time_seconds": 345.32559990882874,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a bicycle-0.mp4"
+    },
+    {
+      "prompt_idx": 32,
+      "mode": "cog_ec_adaptive_hi0.15_lo0.075_f9_l6",
+      "time_seconds": 375.8686785697937,
+      "dit_time_seconds": 345.25459265708923,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.15_lo0.075_f9_l6/a car-0.mp4"
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+    "spatial_relationship": [
+        0.4558975587738013,
+        [
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/a bicycle on the left of a car, front view-0.mp4",
+                "video_results": 0.9375,
+                "frame_results": [
+                    0,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/a car on the right of a motorcycle, front view-0.mp4",
+                "video_results": 0.375,
+                "frame_results": [
+                    1,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/a motorcycle on the left of a bus, front view-0.mp4",
+                "video_results": 0.0551926763214039,
+                "frame_results": [
+                    0,
+                    0,
+                    0,
+                    0.2031808770939206,
+                    0,
+                    0.23934677553741046,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0.23940818053596616,
+                    0,
+                    0.20114698797516517,
+                    0
+                ]
+            }
+        ]
+    ]
+}

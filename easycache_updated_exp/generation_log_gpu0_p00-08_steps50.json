@@ -1,0 +1,227 @@
+{
+  "gpu": "0",
+  "start_idx": 0,
+  "end_idx": 8,
+  "model_id": "THUDM/CogVideoX1.5-5B",
+  "steps": 50,
+  "guidance_scale": 6.0,
+  "seed": 0,
+  "runs": [
+    {
+      "prompt_idx": 0,
+      "mode": "cog_ec_adaptive_hi0.10_lo0.075",
+      "time_seconds": 419.8917260169983,
+      "dit_time_seconds": 388.8281571865082,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.10_lo0.075/a person swimming in ocean-0.mp4"
+    },
+    {
+      "prompt_idx": 0,
+      "mode": "cog_ec_fixed_0.125",
+      "time_seconds": 341.769015789032,
+      "dit_time_seconds": 310.91764211654663,
+      "ret_steps": 5,
+      "thresh": 0.125,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/a person swimming in ocean-0.mp4"
+    },
+    {
+      "prompt_idx": 0,
+      "mode": "cog_ec_adaptive_hi0.125_lo0.075",
+      "time_seconds": 380.6221604347229,
+      "dit_time_seconds": 349.83837246894836,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.125_lo0.075/a person swimming in ocean-0.mp4"
+    },
+    {
+      "prompt_idx": 1,
+      "mode": "cog_ec_adaptive_hi0.10_lo0.075",
+      "time_seconds": 439.772479057312,
+      "dit_time_seconds": 408.9299941062927,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.10_lo0.075/a person giving a presentation to a room full of colleagues-0.mp4"
+    },
+    {
+      "prompt_idx": 1,
+      "mode": "cog_ec_fixed_0.125",
+      "time_seconds": 380.9193341732025,
+      "dit_time_seconds": 350.1084225177765,
+      "ret_steps": 5,
+      "thresh": 0.125,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/a person giving a presentation to a room full of colleagues-0.mp4"
+    },
+    {
+      "prompt_idx": 1,
+      "mode": "cog_ec_adaptive_hi0.125_lo0.075",
+      "time_seconds": 381.2253770828247,
+      "dit_time_seconds": 350.41653847694397,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.125_lo0.075/a person giving a presentation to a room full of colleagues-0.mp4"
+    },
+    {
+      "prompt_idx": 2,
+      "mode": "cog_ec_adaptive_hi0.10_lo0.075",
+      "time_seconds": 439.664431810379,
+      "dit_time_seconds": 408.76291942596436,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.10_lo0.075/a person washing the dishes-0.mp4"
+    },
+    {
+      "prompt_idx": 2,
+      "mode": "cog_ec_fixed_0.125",
+      "time_seconds": 380.89741921424866,
+      "dit_time_seconds": 350.143009185791,
+      "ret_steps": 5,
+      "thresh": 0.125,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/a person washing the dishes-0.mp4"
+    },
+    {
+      "prompt_idx": 2,
+      "mode": "cog_ec_adaptive_hi0.125_lo0.075",
+      "time_seconds": 381.22318291664124,
+      "dit_time_seconds": 350.347918510437,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.125_lo0.075/a person washing the dishes-0.mp4"
+    },
+    {
+      "prompt_idx": 3,
+      "mode": "cog_ec_adaptive_hi0.10_lo0.075",
+      "time_seconds": 439.61812114715576,
+      "dit_time_seconds": 408.72948455810547,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.10_lo0.075/Close up of grapes on a rotating table.-0.mp4"
+    },
+    {
+      "prompt_idx": 3,
+      "mode": "cog_ec_fixed_0.125",
+      "time_seconds": 381.03263306617737,
+      "dit_time_seconds": 350.21783423423767,
+      "ret_steps": 5,
+      "thresh": 0.125,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/Close up of grapes on a rotating table.-0.mp4"
+    },
+    {
+      "prompt_idx": 3,
+      "mode": "cog_ec_adaptive_hi0.125_lo0.075",
+      "time_seconds": 400.54035806655884,
+      "dit_time_seconds": 369.69932794570923,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.125_lo0.075/Close up of grapes on a rotating table.-0.mp4"
+    },
+    {
+      "prompt_idx": 4,
+      "mode": "cog_ec_adaptive_hi0.10_lo0.075",
+      "time_seconds": 439.0211732387543,
+      "dit_time_seconds": 408.2073690891266,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.10_lo0.075/Turtle swimming in ocean.-0.mp4"
+    },
+    {
+      "prompt_idx": 4,
+      "mode": "cog_ec_fixed_0.125",
+      "time_seconds": 361.2985751628876,
+      "dit_time_seconds": 330.4606294631958,
+      "ret_steps": 5,
+      "thresh": 0.125,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/Turtle swimming in ocean.-0.mp4"
+    },
+    {
+      "prompt_idx": 4,
+      "mode": "cog_ec_adaptive_hi0.125_lo0.075",
+      "time_seconds": 380.61300230026245,
+      "dit_time_seconds": 349.7923879623413,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.125_lo0.075/Turtle swimming in ocean.-0.mp4"
+    },
+    {
+      "prompt_idx": 5,
+      "mode": "cog_ec_adaptive_hi0.10_lo0.075",
+      "time_seconds": 439.3425986766815,
+      "dit_time_seconds": 408.48971724510193,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.10_lo0.075/A storm trooper vacuuming the beach.-0.mp4"
+    },
+    {
+      "prompt_idx": 5,
+      "mode": "cog_ec_fixed_0.125",
+      "time_seconds": 361.25140833854675,
+      "dit_time_seconds": 330.35091638565063,
+      "ret_steps": 5,
+      "thresh": 0.125,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/A storm trooper vacuuming the beach.-0.mp4"
+    },
+    {
+      "prompt_idx": 5,
+      "mode": "cog_ec_adaptive_hi0.125_lo0.075",
+      "time_seconds": 380.7894186973572,
+      "dit_time_seconds": 349.84292435646057,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.125_lo0.075/A storm trooper vacuuming the beach.-0.mp4"
+    },
+    {
+      "prompt_idx": 6,
+      "mode": "cog_ec_adaptive_hi0.10_lo0.075",
+      "time_seconds": 420.09671664237976,
+      "dit_time_seconds": 389.1920557022095,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.10_lo0.075/alley-0.mp4"
+    },
+    {
+      "prompt_idx": 6,
+      "mode": "cog_ec_fixed_0.125",
+      "time_seconds": 361.5749192237854,
+      "dit_time_seconds": 330.61479687690735,
+      "ret_steps": 5,
+      "thresh": 0.125,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/alley-0.mp4"
+    },
+    {
+      "prompt_idx": 6,
+      "mode": "cog_ec_adaptive_hi0.125_lo0.075",
+      "time_seconds": 380.9453821182251,
+      "dit_time_seconds": 350.1022403240204,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.125_lo0.075/alley-0.mp4"
+    },
+    {
+      "prompt_idx": 7,
+      "mode": "cog_ec_adaptive_hi0.10_lo0.075",
+      "time_seconds": 439.64799213409424,
+      "dit_time_seconds": 408.7532048225403,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.10_lo0.075/amusement park-0.mp4"
+    },
+    {
+      "prompt_idx": 7,
+      "mode": "cog_ec_fixed_0.125",
+      "time_seconds": 380.97101306915283,
+      "dit_time_seconds": 350.0757505893707,
+      "ret_steps": 5,
+      "thresh": 0.125,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/amusement park-0.mp4"
+    },
+    {
+      "prompt_idx": 7,
+      "mode": "cog_ec_adaptive_hi0.125_lo0.075",
+      "time_seconds": 400.386433839798,
+      "dit_time_seconds": 369.5714910030365,
+      "ret_steps": 5,
+      "thresh": 0.0,
+      "video_path": "/workspace/cogvideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.125_lo0.075/amusement park-0.mp4"
+    }
+  ]
+}

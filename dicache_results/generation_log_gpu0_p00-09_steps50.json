@@ -13,506 +13,290 @@
   "runs": [
     {
       "prompt_idx": 0,
-      "mode": "cog_dc_baseline",
-      "time_seconds": 1007.69,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/000-seed0.mp4",
-      "rel_l1_thresh": 0.0,
+      "mode": "cog_dc_fixed_0.40",
+      "time_seconds": 378.84,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.40/a person swimming in ocean-0.mp4",
+      "rel_l1_thresh": 0.4,
       "probe_depth": 1
     },
     {
       "prompt_idx": 0,
-      "mode": "cog_dc_fixed_0.05",
-      "time_seconds": 797.54,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/000-seed0.mp4",
-      "rel_l1_thresh": 0.05,
+      "mode": "cog_dc_fixed_0.50",
+      "time_seconds": 284.01,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.50/a person swimming in ocean-0.mp4",
+      "rel_l1_thresh": 0.5,
       "probe_depth": 1
     },
     {
       "prompt_idx": 0,
-      "mode": "cog_dc_fixed_0.10",
-      "time_seconds": 625.97,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/000-seed0.mp4",
-      "rel_l1_thresh": 0.1,
+      "mode": "cog_dc_fixed_0.60",
+      "time_seconds": 245.97,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.60/a person swimming in ocean-0.mp4",
+      "rel_l1_thresh": 0.6,
       "probe_depth": 1
     },
     {
       "prompt_idx": 0,
-      "mode": "cog_dc_fixed_0.15",
-      "time_seconds": 553.35,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/000-seed0.mp4",
-      "rel_l1_thresh": 0.15,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 0,
-      "mode": "cog_dc_fixed_0.20",
-      "time_seconds": 600.58,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/000-seed0.mp4",
-      "rel_l1_thresh": 0.2,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 0,
-      "mode": "cog_dc_fixed_0.25",
-      "time_seconds": 435.6,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/000-seed0.mp4",
-      "rel_l1_thresh": 0.25,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 0,
-      "mode": "cog_dc_fixed_0.30",
-      "time_seconds": 416.64,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/000-seed0.mp4",
-      "rel_l1_thresh": 0.3,
+      "mode": "cog_dc_fixed_0.70",
+      "time_seconds": 246.02,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.70/a person swimming in ocean-0.mp4",
+      "rel_l1_thresh": 0.7,
       "probe_depth": 1
     },
     {
       "prompt_idx": 1,
-      "mode": "cog_dc_baseline",
-      "time_seconds": 1008.99,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/001-seed0.mp4",
-      "rel_l1_thresh": 0.0,
+      "mode": "cog_dc_fixed_0.40",
+      "time_seconds": 360.34,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.40/a person giving a presentation to a room full of colleagues-0.mp4",
+      "rel_l1_thresh": 0.4,
       "probe_depth": 1
     },
     {
       "prompt_idx": 1,
-      "mode": "cog_dc_fixed_0.05",
-      "time_seconds": 899.89,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/001-seed0.mp4",
-      "rel_l1_thresh": 0.05,
+      "mode": "cog_dc_fixed_0.50",
+      "time_seconds": 284.63,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.50/a person giving a presentation to a room full of colleagues-0.mp4",
+      "rel_l1_thresh": 0.5,
       "probe_depth": 1
     },
     {
       "prompt_idx": 1,
-      "mode": "cog_dc_fixed_0.10",
-      "time_seconds": 768.33,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/001-seed0.mp4",
-      "rel_l1_thresh": 0.1,
+      "mode": "cog_dc_fixed_0.60",
+      "time_seconds": 265.56,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.60/a person giving a presentation to a room full of colleagues-0.mp4",
+      "rel_l1_thresh": 0.6,
       "probe_depth": 1
     },
     {
       "prompt_idx": 1,
-      "mode": "cog_dc_fixed_0.15",
-      "time_seconds": 662.68,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/001-seed0.mp4",
-      "rel_l1_thresh": 0.15,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 1,
-      "mode": "cog_dc_fixed_0.20",
-      "time_seconds": 608.88,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/001-seed0.mp4",
-      "rel_l1_thresh": 0.2,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 1,
-      "mode": "cog_dc_fixed_0.25",
-      "time_seconds": 520.02,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/001-seed0.mp4",
-      "rel_l1_thresh": 0.25,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 1,
-      "mode": "cog_dc_fixed_0.30",
-      "time_seconds": 418.69,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/001-seed0.mp4",
-      "rel_l1_thresh": 0.3,
+      "mode": "cog_dc_fixed_0.70",
+      "time_seconds": 246.56,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.70/a person giving a presentation to a room full of colleagues-0.mp4",
+      "rel_l1_thresh": 0.7,
       "probe_depth": 1
     },
     {
       "prompt_idx": 2,
-      "mode": "cog_dc_baseline",
-      "time_seconds": 1022.83,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/002-seed0.mp4",
-      "rel_l1_thresh": 0.0,
+      "mode": "cog_dc_fixed_0.40",
+      "time_seconds": 360.26,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.40/a person washing the dishes-0.mp4",
+      "rel_l1_thresh": 0.4,
       "probe_depth": 1
     },
     {
       "prompt_idx": 2,
-      "mode": "cog_dc_fixed_0.05",
-      "time_seconds": 858.05,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/002-seed0.mp4",
-      "rel_l1_thresh": 0.05,
+      "mode": "cog_dc_fixed_0.50",
+      "time_seconds": 284.56,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.50/a person washing the dishes-0.mp4",
+      "rel_l1_thresh": 0.5,
       "probe_depth": 1
     },
     {
       "prompt_idx": 2,
-      "mode": "cog_dc_fixed_0.10",
-      "time_seconds": 780.59,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/002-seed0.mp4",
-      "rel_l1_thresh": 0.1,
+      "mode": "cog_dc_fixed_0.60",
+      "time_seconds": 246.42,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.60/a person washing the dishes-0.mp4",
+      "rel_l1_thresh": 0.6,
       "probe_depth": 1
     },
     {
       "prompt_idx": 2,
-      "mode": "cog_dc_fixed_0.15",
-      "time_seconds": 629.19,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/002-seed0.mp4",
-      "rel_l1_thresh": 0.15,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 2,
-      "mode": "cog_dc_fixed_0.20",
-      "time_seconds": 497.84,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/002-seed0.mp4",
-      "rel_l1_thresh": 0.2,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 2,
-      "mode": "cog_dc_fixed_0.25",
-      "time_seconds": 586.7,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/002-seed0.mp4",
-      "rel_l1_thresh": 0.25,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 2,
-      "mode": "cog_dc_fixed_0.30",
-      "time_seconds": 426.52,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/002-seed0.mp4",
-      "rel_l1_thresh": 0.3,
+      "mode": "cog_dc_fixed_0.70",
+      "time_seconds": 246.44,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.70/a person washing the dishes-0.mp4",
+      "rel_l1_thresh": 0.7,
       "probe_depth": 1
     },
     {
       "prompt_idx": 3,
-      "mode": "cog_dc_baseline",
-      "time_seconds": 1056.76,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/003-seed0.mp4",
-      "rel_l1_thresh": 0.0,
+      "mode": "cog_dc_fixed_0.40",
+      "time_seconds": 360.14,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.40/Close up of grapes on a rotating table.-0.mp4",
+      "rel_l1_thresh": 0.4,
       "probe_depth": 1
     },
     {
       "prompt_idx": 3,
-      "mode": "cog_dc_fixed_0.05",
-      "time_seconds": 818.19,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/003-seed0.mp4",
-      "rel_l1_thresh": 0.05,
+      "mode": "cog_dc_fixed_0.50",
+      "time_seconds": 284.28,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.50/Close up of grapes on a rotating table.-0.mp4",
+      "rel_l1_thresh": 0.5,
       "probe_depth": 1
     },
     {
       "prompt_idx": 3,
-      "mode": "cog_dc_fixed_0.10",
-      "time_seconds": 645.92,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/003-seed0.mp4",
-      "rel_l1_thresh": 0.1,
+      "mode": "cog_dc_fixed_0.60",
+      "time_seconds": 265.42,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.60/Close up of grapes on a rotating table.-0.mp4",
+      "rel_l1_thresh": 0.6,
       "probe_depth": 1
     },
     {
       "prompt_idx": 3,
-      "mode": "cog_dc_fixed_0.15",
-      "time_seconds": 569.54,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/003-seed0.mp4",
-      "rel_l1_thresh": 0.15,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 3,
-      "mode": "cog_dc_fixed_0.20",
-      "time_seconds": 512.32,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/003-seed0.mp4",
-      "rel_l1_thresh": 0.2,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 3,
-      "mode": "cog_dc_fixed_0.25",
-      "time_seconds": 464.89,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/003-seed0.mp4",
-      "rel_l1_thresh": 0.25,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 3,
-      "mode": "cog_dc_fixed_0.30",
-      "time_seconds": 470.99,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/003-seed0.mp4",
-      "rel_l1_thresh": 0.3,
+      "mode": "cog_dc_fixed_0.70",
+      "time_seconds": 246.32,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.70/Close up of grapes on a rotating table.-0.mp4",
+      "rel_l1_thresh": 0.7,
       "probe_depth": 1
     },
     {
       "prompt_idx": 4,
-      "mode": "cog_dc_baseline",
-      "time_seconds": 1053.03,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/004-seed0.mp4",
-      "rel_l1_thresh": 0.0,
+      "mode": "cog_dc_fixed_0.40",
+      "time_seconds": 378.56,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.40/Turtle swimming in ocean.-0.mp4",
+      "rel_l1_thresh": 0.4,
       "probe_depth": 1
     },
     {
       "prompt_idx": 4,
-      "mode": "cog_dc_fixed_0.05",
-      "time_seconds": 881.09,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/004-seed0.mp4",
-      "rel_l1_thresh": 0.05,
+      "mode": "cog_dc_fixed_0.50",
+      "time_seconds": 284.07,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.50/Turtle swimming in ocean.-0.mp4",
+      "rel_l1_thresh": 0.5,
       "probe_depth": 1
     },
     {
       "prompt_idx": 4,
-      "mode": "cog_dc_fixed_0.10",
-      "time_seconds": 679.37,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/004-seed0.mp4",
-      "rel_l1_thresh": 0.1,
+      "mode": "cog_dc_fixed_0.60",
+      "time_seconds": 246.05,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.60/Turtle swimming in ocean.-0.mp4",
+      "rel_l1_thresh": 0.6,
       "probe_depth": 1
     },
     {
       "prompt_idx": 4,
-      "mode": "cog_dc_fixed_0.15",
-      "time_seconds": 568.9,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/004-seed0.mp4",
-      "rel_l1_thresh": 0.15,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 4,
-      "mode": "cog_dc_fixed_0.20",
-      "time_seconds": 502.72,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/004-seed0.mp4",
-      "rel_l1_thresh": 0.2,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 4,
-      "mode": "cog_dc_fixed_0.25",
-      "time_seconds": 513.16,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/004-seed0.mp4",
-      "rel_l1_thresh": 0.25,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 4,
-      "mode": "cog_dc_fixed_0.30",
-      "time_seconds": 427.62,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/004-seed0.mp4",
-      "rel_l1_thresh": 0.3,
+      "mode": "cog_dc_fixed_0.70",
+      "time_seconds": 245.98,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.70/Turtle swimming in ocean.-0.mp4",
+      "rel_l1_thresh": 0.7,
       "probe_depth": 1
     },
     {
       "prompt_idx": 5,
-      "mode": "cog_dc_baseline",
-      "time_seconds": 1007.2,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/005-seed0.mp4",
-      "rel_l1_thresh": 0.0,
+      "mode": "cog_dc_fixed_0.40",
+      "time_seconds": 340.77,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.40/A storm trooper vacuuming the beach.-0.mp4",
+      "rel_l1_thresh": 0.4,
       "probe_depth": 1
     },
     {
       "prompt_idx": 5,
-      "mode": "cog_dc_fixed_0.05",
-      "time_seconds": 941.74,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/005-seed0.mp4",
-      "rel_l1_thresh": 0.05,
+      "mode": "cog_dc_fixed_0.50",
+      "time_seconds": 284.27,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.50/A storm trooper vacuuming the beach.-0.mp4",
+      "rel_l1_thresh": 0.5,
       "probe_depth": 1
     },
     {
       "prompt_idx": 5,
-      "mode": "cog_dc_fixed_0.10",
-      "time_seconds": 734.82,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/005-seed0.mp4",
-      "rel_l1_thresh": 0.1,
+      "mode": "cog_dc_fixed_0.60",
+      "time_seconds": 265.25,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.60/A storm trooper vacuuming the beach.-0.mp4",
+      "rel_l1_thresh": 0.6,
       "probe_depth": 1
     },
     {
       "prompt_idx": 5,
-      "mode": "cog_dc_fixed_0.15",
-      "time_seconds": 569.2,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/005-seed0.mp4",
-      "rel_l1_thresh": 0.15,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 5,
-      "mode": "cog_dc_fixed_0.20",
-      "time_seconds": 510.26,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/005-seed0.mp4",
-      "rel_l1_thresh": 0.2,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 5,
-      "mode": "cog_dc_fixed_0.25",
-      "time_seconds": 482.26,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/005-seed0.mp4",
-      "rel_l1_thresh": 0.25,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 5,
-      "mode": "cog_dc_fixed_0.30",
-      "time_seconds": 416.44,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/005-seed0.mp4",
-      "rel_l1_thresh": 0.3,
+      "mode": "cog_dc_fixed_0.70",
+      "time_seconds": 246.17,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.70/A storm trooper vacuuming the beach.-0.mp4",
+      "rel_l1_thresh": 0.7,
       "probe_depth": 1
     },
     {
       "prompt_idx": 6,
-      "mode": "cog_dc_baseline",
-      "time_seconds": 1186.13,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/006-seed0.mp4",
-      "rel_l1_thresh": 0.0,
+      "mode": "cog_dc_fixed_0.40",
+      "time_seconds": 360.13,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.40/alley-0.mp4",
+      "rel_l1_thresh": 0.4,
       "probe_depth": 1
     },
     {
       "prompt_idx": 6,
-      "mode": "cog_dc_fixed_0.05",
-      "time_seconds": 801.92,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/006-seed0.mp4",
-      "rel_l1_thresh": 0.05,
+      "mode": "cog_dc_fixed_0.50",
+      "time_seconds": 265.25,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.50/alley-0.mp4",
+      "rel_l1_thresh": 0.5,
       "probe_depth": 1
     },
     {
       "prompt_idx": 6,
-      "mode": "cog_dc_fixed_0.10",
-      "time_seconds": 649.27,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/006-seed0.mp4",
-      "rel_l1_thresh": 0.1,
+      "mode": "cog_dc_fixed_0.60",
+      "time_seconds": 246.18,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.60/alley-0.mp4",
+      "rel_l1_thresh": 0.6,
       "probe_depth": 1
     },
     {
       "prompt_idx": 6,
-      "mode": "cog_dc_fixed_0.15",
-      "time_seconds": 569.71,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/006-seed0.mp4",
-      "rel_l1_thresh": 0.15,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 6,
-      "mode": "cog_dc_fixed_0.20",
-      "time_seconds": 512.47,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/006-seed0.mp4",
-      "rel_l1_thresh": 0.2,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 6,
-      "mode": "cog_dc_fixed_0.25",
-      "time_seconds": 455.38,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/006-seed0.mp4",
-      "rel_l1_thresh": 0.25,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 6,
-      "mode": "cog_dc_fixed_0.30",
-      "time_seconds": 417.18,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/006-seed0.mp4",
-      "rel_l1_thresh": 0.3,
+      "mode": "cog_dc_fixed_0.70",
+      "time_seconds": 246.26,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.70/alley-0.mp4",
+      "rel_l1_thresh": 0.7,
       "probe_depth": 1
     },
     {
       "prompt_idx": 7,
-      "mode": "cog_dc_baseline",
-      "time_seconds": 1009.13,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/007-seed0.mp4",
-      "rel_l1_thresh": 0.0,
+      "mode": "cog_dc_fixed_0.40",
+      "time_seconds": 360.2,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.40/amusement park-0.mp4",
+      "rel_l1_thresh": 0.4,
       "probe_depth": 1
     },
     {
       "prompt_idx": 7,
-      "mode": "cog_dc_fixed_0.05",
-      "time_seconds": 799.0,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/007-seed0.mp4",
-      "rel_l1_thresh": 0.05,
+      "mode": "cog_dc_fixed_0.50",
+      "time_seconds": 284.29,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.50/amusement park-0.mp4",
+      "rel_l1_thresh": 0.5,
       "probe_depth": 1
     },
     {
       "prompt_idx": 7,
-      "mode": "cog_dc_fixed_0.10",
-      "time_seconds": 626.94,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/007-seed0.mp4",
-      "rel_l1_thresh": 0.1,
+      "mode": "cog_dc_fixed_0.60",
+      "time_seconds": 246.19,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.60/amusement park-0.mp4",
+      "rel_l1_thresh": 0.6,
       "probe_depth": 1
     },
     {
       "prompt_idx": 7,
-      "mode": "cog_dc_fixed_0.15",
-      "time_seconds": 569.64,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/007-seed0.mp4",
-      "rel_l1_thresh": 0.15,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 7,
-      "mode": "cog_dc_fixed_0.20",
-      "time_seconds": 512.35,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/007-seed0.mp4",
-      "rel_l1_thresh": 0.2,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 7,
-      "mode": "cog_dc_fixed_0.25",
-      "time_seconds": 455.21,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/007-seed0.mp4",
-      "rel_l1_thresh": 0.25,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 7,
-      "mode": "cog_dc_fixed_0.30",
-      "time_seconds": 423.78,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/007-seed0.mp4",
-      "rel_l1_thresh": 0.3,
+      "mode": "cog_dc_fixed_0.70",
+      "time_seconds": 246.22,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.70/amusement park-0.mp4",
+      "rel_l1_thresh": 0.7,
       "probe_depth": 1
     },
     {
       "prompt_idx": 8,
-      "mode": "cog_dc_baseline",
-      "time_seconds": 1027.38,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_baseline/008-seed0.mp4",
-      "rel_l1_thresh": 0.0,
+      "mode": "cog_dc_fixed_0.40",
+      "time_seconds": 359.89,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.40/aquarium-0.mp4",
+      "rel_l1_thresh": 0.4,
       "probe_depth": 1
     },
     {
       "prompt_idx": 8,
-      "mode": "cog_dc_fixed_0.05",
-      "time_seconds": 832.81,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.05/008-seed0.mp4",
-      "rel_l1_thresh": 0.05,
+      "mode": "cog_dc_fixed_0.50",
+      "time_seconds": 286.77,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.50/aquarium-0.mp4",
+      "rel_l1_thresh": 0.5,
       "probe_depth": 1
     },
     {
       "prompt_idx": 8,
-      "mode": "cog_dc_fixed_0.10",
-      "time_seconds": 657.76,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.10/008-seed0.mp4",
-      "rel_l1_thresh": 0.1,
+      "mode": "cog_dc_fixed_0.60",
+      "time_seconds": 250.23,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.60/aquarium-0.mp4",
+      "rel_l1_thresh": 0.6,
       "probe_depth": 1
     },
     {
       "prompt_idx": 8,
-      "mode": "cog_dc_fixed_0.15",
-      "time_seconds": 579.77,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.15/008-seed0.mp4",
-      "rel_l1_thresh": 0.15,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 8,
-      "mode": "cog_dc_fixed_0.20",
-      "time_seconds": 502.23,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.20/008-seed0.mp4",
-      "rel_l1_thresh": 0.2,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 8,
-      "mode": "cog_dc_fixed_0.25",
-      "time_seconds": 463.6,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.25/008-seed0.mp4",
-      "rel_l1_thresh": 0.25,
-      "probe_depth": 1
-    },
-    {
-      "prompt_idx": 8,
-      "mode": "cog_dc_fixed_0.30",
-      "time_seconds": 424.33,
-      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.30/008-seed0.mp4",
-      "rel_l1_thresh": 0.3,
+      "mode": "cog_dc_fixed_0.70",
+      "time_seconds": 250.34,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.70/aquarium-0.mp4",
+      "rel_l1_thresh": 0.7,
       "probe_depth": 1
     }
   ]

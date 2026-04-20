@@ -1,0 +1,375 @@
+{
+  "gpu": "3",
+  "start_idx": 24,
+  "end_idx": 33,
+  "model_id": "THUDM/CogVideoX1.5-5B",
+  "steps": 50,
+  "guidance_scale": 6.0,
+  "seed": 0,
+  "height": 768,
+  "width": 1360,
+  "num_frames": 81,
+  "fps": 16,
+  "runs": [
+    {
+      "prompt_idx": 24,
+      "mode": "cog_dc_fixed_0.35",
+      "time_seconds": 407.22,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.35/a bicycle on the left of a car, front view-0.mp4",
+      "rel_l1_thresh": 0.35,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 24,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.05_late",
+      "time_seconds": 603.48,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.05_late/a bicycle on the left of a car, front view-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 24,
+      "mode": "cog_dc_adaptive_hi0.30_lo0.05_late",
+      "time_seconds": 603.41,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.30_lo0.05_late/a bicycle on the left of a car, front view-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 24,
+      "mode": "cog_dc_adaptive_hi0.35_lo0.10_late",
+      "time_seconds": 543.83,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.35_lo0.10_late/a bicycle on the left of a car, front view-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 24,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.10_early",
+      "time_seconds": 504.63,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.10_early/a bicycle on the left of a car, front view-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 25,
+      "mode": "cog_dc_fixed_0.35",
+      "time_seconds": 406.92,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.35/a car on the right of a motorcycle, front view-0.mp4",
+      "rel_l1_thresh": 0.35,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 25,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.05_late",
+      "time_seconds": 601.86,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.05_late/a car on the right of a motorcycle, front view-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 25,
+      "mode": "cog_dc_adaptive_hi0.30_lo0.05_late",
+      "time_seconds": 603.0,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.30_lo0.05_late/a car on the right of a motorcycle, front view-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 25,
+      "mode": "cog_dc_adaptive_hi0.35_lo0.10_late",
+      "time_seconds": 543.56,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.35_lo0.10_late/a car on the right of a motorcycle, front view-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 25,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.10_early",
+      "time_seconds": 504.53,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.10_early/a car on the right of a motorcycle, front view-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 26,
+      "mode": "cog_dc_fixed_0.35",
+      "time_seconds": 407.16,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.35/a motorcycle on the left of a bus, front view-0.mp4",
+      "rel_l1_thresh": 0.35,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 26,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.05_late",
+      "time_seconds": 602.28,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.05_late/a motorcycle on the left of a bus, front view-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 26,
+      "mode": "cog_dc_adaptive_hi0.30_lo0.05_late",
+      "time_seconds": 602.39,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.30_lo0.05_late/a motorcycle on the left of a bus, front view-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 26,
+      "mode": "cog_dc_adaptive_hi0.35_lo0.10_late",
+      "time_seconds": 543.63,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.35_lo0.10_late/a motorcycle on the left of a bus, front view-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 26,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.10_early",
+      "time_seconds": 504.59,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.10_early/a motorcycle on the left of a bus, front view-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 27,
+      "mode": "cog_dc_fixed_0.35",
+      "time_seconds": 407.02,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.35/a bird and a cat-0.mp4",
+      "rel_l1_thresh": 0.35,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 27,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.05_late",
+      "time_seconds": 603.52,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.05_late/a bird and a cat-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 27,
+      "mode": "cog_dc_adaptive_hi0.30_lo0.05_late",
+      "time_seconds": 602.28,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.30_lo0.05_late/a bird and a cat-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 27,
+      "mode": "cog_dc_adaptive_hi0.35_lo0.10_late",
+      "time_seconds": 544.89,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.35_lo0.10_late/a bird and a cat-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 27,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.10_early",
+      "time_seconds": 505.05,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.10_early/a bird and a cat-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 28,
+      "mode": "cog_dc_fixed_0.35",
+      "time_seconds": 407.37,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.35/a cat and a dog-0.mp4",
+      "rel_l1_thresh": 0.35,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 28,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.05_late",
+      "time_seconds": 602.65,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.05_late/a cat and a dog-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 28,
+      "mode": "cog_dc_adaptive_hi0.30_lo0.05_late",
+      "time_seconds": 602.58,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.30_lo0.05_late/a cat and a dog-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 28,
+      "mode": "cog_dc_adaptive_hi0.35_lo0.10_late",
+      "time_seconds": 544.06,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.35_lo0.10_late/a cat and a dog-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 28,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.10_early",
+      "time_seconds": 504.97,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.10_early/a cat and a dog-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 29,
+      "mode": "cog_dc_fixed_0.35",
+      "time_seconds": 407.47,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.35/a dog and a horse-0.mp4",
+      "rel_l1_thresh": 0.35,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 29,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.05_late",
+      "time_seconds": 602.51,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.05_late/a dog and a horse-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 29,
+      "mode": "cog_dc_adaptive_hi0.30_lo0.05_late",
+      "time_seconds": 602.55,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.30_lo0.05_late/a dog and a horse-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 29,
+      "mode": "cog_dc_adaptive_hi0.35_lo0.10_late",
+      "time_seconds": 545.09,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.35_lo0.10_late/a dog and a horse-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 29,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.10_early",
+      "time_seconds": 505.84,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.10_early/a dog and a horse-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 30,
+      "mode": "cog_dc_fixed_0.35",
+      "time_seconds": 407.43,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.35/a person-0.mp4",
+      "rel_l1_thresh": 0.35,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 30,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.05_late",
+      "time_seconds": 602.5,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.05_late/a person-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 30,
+      "mode": "cog_dc_adaptive_hi0.30_lo0.05_late",
+      "time_seconds": 602.44,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.30_lo0.05_late/a person-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 30,
+      "mode": "cog_dc_adaptive_hi0.35_lo0.10_late",
+      "time_seconds": 544.05,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.35_lo0.10_late/a person-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 30,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.10_early",
+      "time_seconds": 504.97,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.10_early/a person-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 31,
+      "mode": "cog_dc_fixed_0.35",
+      "time_seconds": 408.37,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.35/a bicycle-0.mp4",
+      "rel_l1_thresh": 0.35,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 31,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.05_late",
+      "time_seconds": 603.16,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.05_late/a bicycle-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 31,
+      "mode": "cog_dc_adaptive_hi0.30_lo0.05_late",
+      "time_seconds": 603.33,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.30_lo0.05_late/a bicycle-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 31,
+      "mode": "cog_dc_adaptive_hi0.35_lo0.10_late",
+      "time_seconds": 544.61,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.35_lo0.10_late/a bicycle-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 31,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.10_early",
+      "time_seconds": 505.24,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.10_early/a bicycle-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 32,
+      "mode": "cog_dc_fixed_0.35",
+      "time_seconds": 407.31,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_fixed_0.35/a car-0.mp4",
+      "rel_l1_thresh": 0.35,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 32,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.05_late",
+      "time_seconds": 602.43,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.05_late/a car-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 32,
+      "mode": "cog_dc_adaptive_hi0.30_lo0.05_late",
+      "time_seconds": 602.41,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.30_lo0.05_late/a car-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 32,
+      "mode": "cog_dc_adaptive_hi0.35_lo0.10_late",
+      "time_seconds": 544.48,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.35_lo0.10_late/a car-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    },
+    {
+      "prompt_idx": 32,
+      "mode": "cog_dc_adaptive_hi0.25_lo0.10_early",
+      "time_seconds": 505.26,
+      "video_path": "/workspace/cogvideo/dicache_results/videos/cog_dc_adaptive_hi0.25_lo0.10_early/a car-0.mp4",
+      "rel_l1_thresh": 0.0,
+      "probe_depth": 1
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+    "spatial_relationship": [
+        0.16834650506827567,
+        [
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_fixed_0.20/a bicycle on the left of a car, front view-0.mp4",
+                "video_results": 0.4906080656351168,
+                "frame_results": [
+                    0,
+                    1,
+                    0.9386316872427983,
+                    0,
+                    1,
+                    0.32919402985074625,
+                    0,
+                    1,
+                    0.348938220616073,
+                    0,
+                    1,
+                    1,
+                    0.2329651124522512,
+                    1,
+                    0,
+                    0
+                ]
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_fixed_0.20/a car on the right of a motorcycle, front view-0.mp4",
+                "video_results": 0.0,
+                "frame_results": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_fixed_0.20/a motorcycle on the left of a bus, front view-0.mp4",
+                "video_results": 0.014431449569710262,
+                "frame_results": [
+                    0,
+                    0.2309031931153642,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            }
+        ]
+    ]
+}

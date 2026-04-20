@@ -1,0 +1,22 @@
+{
+    "color": [
+        0.6458333333333334,
+        [
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/a red bicycle-0.mp4",
+                "video_results": 0.3125,
+                "cur_success_frame_rate": 0.3125
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/a green bicycle-0.mp4",
+                "video_results": 0.625,
+                "cur_success_frame_rate": 0.625
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_fixed_0.125/a blue bicycle-0.mp4",
+                "video_results": 1.0,
+                "cur_success_frame_rate": 1.0
+            }
+        ]
+    ]
+}

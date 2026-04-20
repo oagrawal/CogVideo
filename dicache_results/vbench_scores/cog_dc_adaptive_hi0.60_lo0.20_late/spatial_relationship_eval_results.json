@@ -1,0 +1,73 @@
+{
+    "spatial_relationship": [
+        0.7719501558863788,
+        [
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/dicache_results/videos/cog_dc_adaptive_hi0.60_lo0.20_late/a bicycle on the left of a car, front view-0.mp4",
+                "video_results": 1.0,
+                "frame_results": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/dicache_results/videos/cog_dc_adaptive_hi0.60_lo0.20_late/a car on the right of a motorcycle, front view-0.mp4",
+                "video_results": 1.0,
+                "frame_results": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/dicache_results/videos/cog_dc_adaptive_hi0.60_lo0.20_late/a motorcycle on the left of a bus, front view-0.mp4",
+                "video_results": 0.3158504676591367,
+                "frame_results": [
+                    1,
+                    0.22363833142784842,
+                    0,
+                    0.2209695731153497,
+                    0.22715558720505025,
+                    0.2195592414853469,
+                    0,
+                    0,
+                    0.20219277232758176,
+                    0.2022058952374992,
+                    0.20011279375416846,
+                    0.30938301967493587,
+                    0,
+                    1,
+                    1,
+                    0.2483902683184069
+                ]
+            }
+        ]
+    ]
+}

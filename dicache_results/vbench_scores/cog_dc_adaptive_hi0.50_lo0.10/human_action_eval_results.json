@@ -1,0 +1,22 @@
+{
+    "human_action": [
+        0.3333333333333333,
+        [
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/dicache_results/videos/cog_dc_adaptive_hi0.50_lo0.10/A person is riding a bike-0.mp4",
+                "video_results": true,
+                "cor_num_per_video": 1
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/dicache_results/videos/cog_dc_adaptive_hi0.50_lo0.10/A person is marching-0.mp4",
+                "video_results": false,
+                "cor_num_per_video": 0
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/dicache_results/videos/cog_dc_adaptive_hi0.50_lo0.10/A person is roller skating-0.mp4",
+                "video_results": false,
+                "cor_num_per_video": 0
+            }
+        ]
+    ]
+}

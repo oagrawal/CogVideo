@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Split 33 prompts across 4 GPUs
+# Ranges: 0-8, 8-16, 16-24, 24-33
+
+MODES="cog_ec_adaptive_hi0.10_lo0.075,cog_ec_fixed_0.125,cog_ec_adaptive_hi0.125_lo0.075"
+
+# Create a tmux session named "cogvideo_adaptive_batch"
+tmux new-session -d -s cogvideo_adaptive_batch
+
+# GPU 0
+tmux send-keys -t cogvideo_adaptive_batch "docker exec -e CUDA_VISIBLE_DEVICES=0 cogvideo python3 /workspace/cogvideo/easycache_updated_exp/easycache_batch_generate_5b_adaptive.py --start-idx 0 --end-idx 8 --modes $MODES --output-dir /workspace/cogvideo/easycache_updated_exp/videos > /nfs/oagrawal/CogVideo/easycache_updated_exp/batch_adaptive_gpu0.log 2>&1 &" C-m
+
+# GPU 1
+tmux send-keys -t cogvideo_adaptive_batch "docker exec -e CUDA_VISIBLE_DEVICES=1 cogvideo python3 /workspace/cogvideo/easycache_updated_exp/easycache_batch_generate_5b_adaptive.py --start-idx 8 --end-idx 16 --modes $MODES --output-dir /workspace/cogvideo/easycache_updated_exp/videos > /nfs/oagrawal/CogVideo/easycache_updated_exp/batch_adaptive_gpu1.log 2>&1 &" C-m
+
+# GPU 2
+tmux send-keys -t cogvideo_adaptive_batch "docker exec -e CUDA_VISIBLE_DEVICES=2 cogvideo python3 /workspace/cogvideo/easycache_updated_exp/easycache_batch_generate_5b_adaptive.py --start-idx 16 --end-idx 24 --modes $MODES --output-dir /workspace/cogvideo/easycache_updated_exp/videos > /nfs/oagrawal/CogVideo/easycache_updated_exp/batch_adaptive_gpu2.log 2>&1 &" C-m
+
+# GPU 3
+tmux send-keys -t cogvideo_adaptive_batch "docker exec -e CUDA_VISIBLE_DEVICES=3 cogvideo python3 /workspace/cogvideo/easycache_updated_exp/easycache_batch_generate_5b_adaptive.py --start-idx 24 --end-idx 33 --modes $MODES --output-dir /workspace/cogvideo/easycache_updated_exp/videos > /nfs/oagrawal/CogVideo/easycache_updated_exp/batch_adaptive_gpu3.log 2>&1 &" C-m
+
+echo "All 4 GPU runs have been launched inside the 'cogvideo_adaptive_batch' tmux session."
+echo "You can check the logs at /nfs/oagrawal/CogVideo/easycache_updated_exp/batch_adaptive_gpuX.log"

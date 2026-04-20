@@ -2,14 +2,17 @@
 Batch video generation for CogVideoX1.5-5B + DiCache (33 VBench prompts).
 
 Modes (baseline + fixed thresholds now; adaptive added after calibration):
-  cog_dc_baseline       — no DiCache, original forward
-  cog_dc_fixed_0.05     — fixed rel_l1_thresh=0.05
-  cog_dc_fixed_0.10     — fixed rel_l1_thresh=0.10
-  cog_dc_fixed_0.15     — fixed rel_l1_thresh=0.15
-  cog_dc_fixed_0.20     — fixed rel_l1_thresh=0.20
-  cog_dc_fixed_0.25     — fixed rel_l1_thresh=0.25
-  cog_dc_fixed_0.30     — fixed rel_l1_thresh=0.30
-  (adaptive modes added here after calibration)
+  cog_dc_baseline              — no DiCache, original forward
+  cog_dc_fixed_0.05            — fixed rel_l1_thresh=0.05
+  cog_dc_fixed_0.10            — fixed rel_l1_thresh=0.10
+  cog_dc_fixed_0.15            — fixed rel_l1_thresh=0.15
+  cog_dc_fixed_0.20            — fixed rel_l1_thresh=0.20
+  cog_dc_fixed_0.25            — fixed rel_l1_thresh=0.25
+  cog_dc_fixed_0.30            — fixed rel_l1_thresh=0.30
+  cog_dc_adaptive_hi0.60_lo0.10      — adaptive, low=0.10 steps 0-19, high=0.60 steps 20-49
+  cog_dc_adaptive_hi0.50_lo0.10      — adaptive, low=0.10 steps 0-19, high=0.50 steps 20-49
+  cog_dc_adaptive_hi0.70_lo0.10      — adaptive, low=0.10 steps 0-19, high=0.70 steps 20-49
+  cog_dc_adaptive_hi0.60_lo0.10_late — adaptive, low=0.10 steps 0-19+45-49, high=0.60 steps 20-44
 
 Output layout:
   dicache_results/
@@ -75,6 +78,8 @@ def _mode_config(mode_name: str) -> Dict:
         return {"type": "fixed", "rel_l1_thresh": 0.25, "probe_depth": 1}
     if mode_name == "cog_dc_fixed_0.30":
         return {"type": "fixed", "rel_l1_thresh": 0.30, "probe_depth": 1}
+    if mode_name == "cog_dc_fixed_0.35":
+        return {"type": "fixed", "rel_l1_thresh": 0.35, "probe_depth": 1}
     if mode_name == "cog_dc_fixed_0.40":
         return {"type": "fixed", "rel_l1_thresh": 0.40, "probe_depth": 1}
     if mode_name == "cog_dc_fixed_0.50":
@@ -83,7 +88,61 @@ def _mode_config(mode_name: str) -> Dict:
         return {"type": "fixed", "rel_l1_thresh": 0.60, "probe_depth": 1}
     if mode_name == "cog_dc_fixed_0.70":
         return {"type": "fixed", "rel_l1_thresh": 0.70, "probe_depth": 1}
-    # --- adaptive modes added here after calibration ---
+    # --- adaptive modes (stable_start=20, stable_end=50 unless noted) ---
+    # low threshold for steps 0-19, high for steps 20-49 (no late-volatile band)
+    if mode_name == "cog_dc_adaptive_hi0.60_lo0.10":
+        return {"type": "adaptive", "probe_depth": 1,
+                "thresh_low": 0.10, "thresh_high": 0.60,
+                "stable_start": 20, "stable_end": 50}
+    if mode_name == "cog_dc_adaptive_hi0.50_lo0.10":
+        return {"type": "adaptive", "probe_depth": 1,
+                "thresh_low": 0.10, "thresh_high": 0.50,
+                "stable_start": 20, "stable_end": 50}
+    if mode_name == "cog_dc_adaptive_hi0.70_lo0.10":
+        return {"type": "adaptive", "probe_depth": 1,
+                "thresh_low": 0.10, "thresh_high": 0.70,
+                "stable_start": 20, "stable_end": 50}
+    # low threshold for steps 0-19 AND steps 45-49 (last 5 steps); high for steps 20-44
+    if mode_name == "cog_dc_adaptive_hi0.60_lo0.10_late":
+        return {"type": "adaptive", "probe_depth": 1,
+                "thresh_low": 0.10, "thresh_high": 0.60,
+                "stable_start": 20, "stable_end": 45}
+    
+    if mode_name == "cog_dc_adaptive_hi0.60_lo0.20":
+        return {"type": "adaptive", "probe_depth": 1,
+                "thresh_low": 0.20, "thresh_high": 0.60,
+                "stable_start": 20, "stable_end": 50}
+    if mode_name == "cog_dc_adaptive_hi0.50_lo0.20":
+        return {"type": "adaptive", "probe_depth": 1,
+                "thresh_low": 0.20, "thresh_high": 0.50,
+                "stable_start": 20, "stable_end": 50}
+    if mode_name == "cog_dc_adaptive_hi0.70_lo0.20":
+        return {"type": "adaptive", "probe_depth": 1,
+                "thresh_low": 0.20, "thresh_high": 0.70,
+                "stable_start": 20, "stable_end": 50}
+    if mode_name == "cog_dc_adaptive_hi0.60_lo0.20_late":
+        return {"type": "adaptive", "probe_depth": 1,
+                "thresh_low": 0.20, "thresh_high": 0.60,
+                "stable_start": 20, "stable_end": 45}
+
+    # --- New Fidelity-Optimized Modes ---
+    if mode_name == "cog_dc_adaptive_hi0.25_lo0.05_late":
+        return {"type": "adaptive", "probe_depth": 1,
+                "thresh_low": 0.05, "thresh_high": 0.25,
+                "stable_start": 20, "stable_end": 45}
+    if mode_name == "cog_dc_adaptive_hi0.30_lo0.05_late":
+        return {"type": "adaptive", "probe_depth": 1,
+                "thresh_low": 0.05, "thresh_high": 0.30,
+                "stable_start": 20, "stable_end": 45}
+    if mode_name == "cog_dc_adaptive_hi0.35_lo0.10_late":
+        return {"type": "adaptive", "probe_depth": 1,
+                "thresh_low": 0.10, "thresh_high": 0.35,
+                "stable_start": 20, "stable_end": 45}
+    if mode_name == "cog_dc_adaptive_hi0.25_lo0.10_early":
+        return {"type": "adaptive", "probe_depth": 1,
+                "thresh_low": 0.10, "thresh_high": 0.25,
+                "stable_start": 15, "stable_end": 50}
+                
     raise ValueError(f"Unknown mode: {mode_name!r}")
 
 
@@ -183,7 +242,7 @@ def main() -> None:
 
     for local_i, p in enumerate(prompts_slice):
         prompt_idx = args.start_idx + local_i
-        prompt_text = p["prompt"] if isinstance(p, dict) and "prompt" in p else str(p)
+        prompt_text = p["prompt_en"] if isinstance(p, dict) and "prompt_en" in p else str(p)
 
         for mode_name in mode_names:
             cfg = _mode_config(mode_name)

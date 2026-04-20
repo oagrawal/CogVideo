@@ -1,0 +1,19 @@
+{
+    "subject_consistency": [
+        0.9240477245301009,
+        [
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_fixed_0.05/a person swimming in ocean-0.mp4",
+                "video_results": 0.8573416214436292
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_fixed_0.05/a person giving a presentation to a room full of colleagues-0.mp4",
+                "video_results": 0.9667667113244534
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_fixed_0.05/a person washing the dishes-0.mp4",
+                "video_results": 0.9480348408222199
+            }
+        ]
+    ]
+}

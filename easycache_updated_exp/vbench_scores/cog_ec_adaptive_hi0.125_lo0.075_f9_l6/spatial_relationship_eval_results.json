@@ -1,0 +1,73 @@
+{
+    "spatial_relationship": [
+        0.4748239940109749,
+        [
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.125_lo0.075_f9_l6/a bicycle on the left of a car, front view-0.mp4",
+                "video_results": 0.9566667073762758,
+                "frame_results": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    0.30666731802041386,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.125_lo0.075_f9_l6/a car on the right of a motorcycle, front view-0.mp4",
+                "video_results": 0.3125,
+                "frame_results": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    0,
+                    0,
+                    1,
+                    1,
+                    0,
+                    0,
+                    0,
+                    0
+                ]
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.125_lo0.075_f9_l6/a motorcycle on the left of a bus, front view-0.mp4",
+                "video_results": 0.155305274656649,
+                "frame_results": [
+                    0,
+                    0.21128492031359272,
+                    0.2977998065764023,
+                    0.21130586549497118,
+                    0,
+                    0,
+                    0.23628559787571832,
+                    0.31735033259423506,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0.2108578716514647,
+                    1
+                ]
+            }
+        ]
+    ]
+}

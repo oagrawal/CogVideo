@@ -1,0 +1,25 @@
+{
+    "background_consistency": [
+        0.9642862955729167,
+        [
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.20_lo0.075_f13_l8/alley-0.mp4",
+                "video_results": 0.95985107421875,
+                "video_sim": 76.7880859375,
+                "cnt_per_video": 80
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.20_lo0.075_f13_l8/amusement park-0.mp4",
+                "video_results": 0.958062744140625,
+                "video_sim": 76.64501953125,
+                "cnt_per_video": 80
+            },
+            {
+                "video_path": "/nfs/oagrawal/CogVideo/easycache_updated_exp/videos/cog_ec_adaptive_hi0.20_lo0.075_f13_l8/aquarium-0.mp4",
+                "video_results": 0.974945068359375,
+                "video_sim": 77.99560546875,
+                "cnt_per_video": 80
+            }
+        ]
+    ]
+}
